@@ -29,7 +29,7 @@ function App() {
 
       setResults(restaurants);
     });
-  });
+  }, []);
 
   return <div className="container">hey</div>;
 }
