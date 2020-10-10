@@ -1,10 +1,21 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import { Categories, Cuisines } from '../enums';
 import { apiIds } from './ApiIdMap';
+import Restaurant from '../interfaces/Restaurant';
 
 export interface Filters {
   categories: string[];
   cuisines: string[];
+  rating?: number[];
+  cost?: number[];
+}
+
+export type SortType = 'rating' | 'cost';
+export type SortOrder = 'asc' | 'desc';
+
+export interface Sort {
+  type: SortType;
+  order: SortOrder;
 }
 
 const ENTITY_TYPE = 'city';
@@ -32,6 +43,9 @@ export const getCuisines = () => {
 
 export const getFilterResults = (
   filters: Filters,
+  sorting: Sort,
+  paginationStart: number,
+  maxRecordCount: number,
   otherCuisineIds: number[]
 ) => {
   const categoryIds = filters.categories.map(
@@ -44,8 +58,8 @@ export const getFilterResults = (
       : apiIds.cuisines[c as Cuisines];
   });
 
-  console.log('categoryIds', categoryIds);
-  console.log('cuisineIds', cuisineIds);
+  // console.log('categoryIds', categoryIds);
+  // console.log('cuisineIds', cuisineIds);
 
   const route = '/search';
   const requestOptions: AxiosRequestConfig = {
@@ -60,7 +74,11 @@ export const getFilterResults = (
       entity_type: ENTITY_TYPE,
       entity_id: ENTITY_ID,
       category: categoryIds.join(),
-      cuisines: cuisineIds.join()
+      cuisines: cuisineIds.join(),
+      sort: sorting.type,
+      order: sorting.order,
+      start: paginationStart,
+      count: maxRecordCount
     }
   };
 

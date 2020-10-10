@@ -9,24 +9,30 @@ import Slider from '@material-ui/core/Slider';
 import './App.scss';
 import Restaurant from './interfaces/Restaurant';
 import { Categories, Cuisines } from './enums';
-import { Filters, getFilterResults, getCuisines } from './api/Api';
+import {
+  Filters,
+  getFilterResults,
+  getCuisines,
+  Sort,
+  SortType,
+  SortOrder
+} from './api/Api';
 import { apiIds } from './api/ApiIdMap';
 
-function ratingValueText(value: any) {
-  return `${value}°C`;
-}
-
-function costValueText(value: any) {
-  return `$${value}`;
-}
-
 function App() {
+  const MAX_RECORD_COUNT = 5;
+
   const [results, setResults] = useState<Restaurant[]>(null);
+  const [resultsTotal, setResultsTotal] = useState<number>(0);
+  const [paginationStartIndex, setPaginationStartIndex] = useState<number>(0);
   const [categories, setCategories] = useState<Categories[]>([]);
   const [cuisines, setCuisines] = useState<Cuisines[]>([]);
   const [otherCuisineIds, setOtherCuisineIds] = useState<number[]>([]); // not the best
-  const [rating, setRating] = React.useState([0, 5]);
-  const [cost, setCost] = React.useState([0, 500]);
+  const [rating, setRating] = useState<number[]>([0, 5]);
+  const [cost, setCost] = useState<number[]>([0, 500]);
+  const [sortType, setSortType] = useState<string>('cost');
+  const [sortOrder, setSortOrder] = useState<string>('desc');
+  const [loadMoreCount, setLoadMoreCount] = useState<number>(0);
 
   useEffect(() => {
     // determine other cuisine ids
@@ -52,14 +58,38 @@ function App() {
       cuisines
     };
 
-    getFilterResults(filters, otherCuisineIds).then((res) => {
+    const sorting: Sort = {
+      type: sortType as SortType,
+      order: sortOrder as SortOrder
+    };
+
+    getFilterResults(
+      filters,
+      sorting,
+      paginationStartIndex,
+      MAX_RECORD_COUNT,
+      otherCuisineIds
+    ).then((res) => {
       const restaurants: Restaurant[] = res.data.restaurants.map(
         (dataItem: { restaurant: {} }) => dataItem.restaurant
       );
 
+      setResultsTotal(res.data.results_found);
+      setPaginationStartIndex(res.data.results_start);
       setResults(restaurants);
     });
-  }, [categories, cuisines]);
+  }, [categories, cuisines, sortType, sortOrder, loadMoreCount]);
+
+  const ratingValueText = (value: any) => value;
+  const costValueText = (value: any) => `$${value}`;
+
+  const toggleSortOrder = (event: any) => {
+    setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+  };
+
+  const toggleSortType = (event: any) => {
+    setSortType(sortType === 'cost' ? 'rating' : 'cost');
+  };
 
   const categoryCheckboxes = [
     { label: 'Dining', value: Categories.dining },
@@ -81,8 +111,13 @@ function App() {
     { label: 'Chinese', value: Cuisines.chinese },
     { label: 'Pub Food', value: Cuisines.pub },
     { label: 'Egyptian', value: Cuisines.egyptian },
+    { label: 'Bubble Tea', value: Cuisines.bubbleTea },
     { label: 'Other', value: Cuisines.other }
   ];
+
+  const resetPaginationState = () => {
+    setPaginationStartIndex(0);
+  };
 
   const getNewCheckboxGroupVal = (event: any, collection: any[]) => {
     return event.target.checked
@@ -92,18 +127,31 @@ function App() {
 
   const handleCategoriesChange = (event: any) => {
     setCategories(getNewCheckboxGroupVal(event, categories));
+    resetPaginationState();
   };
 
   const handleCuisinesChange = (event: any) => {
     setCuisines(getNewCheckboxGroupVal(event, cuisines));
+    resetPaginationState();
   };
 
   const handleRatingChange = (event: any, newValue: any) => {
     setRating(newValue);
+    resetPaginationState();
   };
 
   const handleCostChange = (event: any, newValue: any) => {
     setCost(newValue);
+    resetPaginationState();
+  };
+
+  const handleLoadMoreClick = () => {
+    setLoadMoreCount(loadMoreCount + 1);
+    setPaginationStartIndex(paginationStartIndex + MAX_RECORD_COUNT);
+  };
+
+  const showLoadMore = () => {
+    return paginationStartIndex + MAX_RECORD_COUNT < resultsTotal;
   };
 
   const ratingMarks = [
@@ -203,18 +251,25 @@ function App() {
       </div>
 
       <h1>Results</h1>
+      <p>
+        Sort: <button onClick={toggleSortType}>{sortType}</button>
+        <button onClick={toggleSortOrder}>{sortOrder}</button>
+      </p>
       <ul>
         {results &&
           results.map((r) => (
             <li>
               <strong>{r.name}</strong> <br />
-              <em>{r.highlights.join(', ')}</em> <br />
-              {r.cuisines} <br />${r.average_cost_for_two}, {r.price_range}{' '}
-              <br />
+              <em>{r.cuisines}</em> <br />${r.average_cost_for_two},{' '}
+              {r.price_range} <br />
               {r.user_rating.aggregate_rating}, {r.user_rating.rating_text}
             </li>
           ))}
       </ul>
+
+      {showLoadMore() && (
+        <button onClick={handleLoadMoreClick}>Load more</button>
+      )}
     </div>
   );
 }
