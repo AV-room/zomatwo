@@ -12,5 +12,6 @@ export default interface Restaurant {
   has_table_booking: number; //?
   has_online_delivery: number; //?
   thumb: string; //?
-  featured_image: string; //?
+  featured_image: string; //?,
+  highlights: string[];
 }

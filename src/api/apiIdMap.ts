@@ -5,7 +5,8 @@ export const apiIds = {
     [Categories.dining]: 2,
     [Categories.takeaway]: 5,
     [Categories.delivery]: 1,
-    [Categories.pubsBars]: 11
+    [Categories.pubsBars]: 11,
+    [Categories.nightlife]: 3
   },
   cuisines: {
     [Cuisines.asian]: 3,

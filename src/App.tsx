@@ -12,39 +12,13 @@ import { Filters, getFilterResults } from './api/SearchApi';
 
 function App() {
   const [results, setResults] = useState<Restaurant[]>(null);
-  // const [categories, setCategories] = useState<string[]>([]);
-
-  const [categories, setCategories] = useState({
-    [Categories.dining]: false,
-    [Categories.takeaway]: false,
-    [Categories.delivery]: false,
-    [Categories.pubsBars]: false
-  });
-
-  const [cuisines, setCuisines] = useState({
-    [Cuisines.cafe]: false,
-    [Cuisines.coffee]: false,
-    [Cuisines.pizza]: false,
-    [Cuisines.fast]: false,
-    [Cuisines.asian]: false,
-    [Cuisines.bakery]: false,
-    [Cuisines.italian]: false,
-    [Cuisines.sandwich]: false,
-    [Cuisines.chinese]: false,
-    [Cuisines.pub]: false,
-    // [Cuisines.other]: false // TODO: account for other
-    [Cuisines.egyptian]: false
-  });
+  const [categories, setCategories] = useState<Categories[]>([]);
+  const [cuisines, setCuisines] = useState<Cuisines[]>([]);
 
   useEffect(() => {
     // extract applied category/cuisine filters
-    const selectedCategories: string[] = Object.keys(categories).filter(
-      (cKey) => categories[cKey as Categories]
-    );
-
-    const selectedCuisines: string[] = Object.keys(cuisines).filter(
-      (cKey) => cuisines[cKey as Cuisines]
-    );
+    const selectedCategories: string[] = categories;
+    const selectedCuisines: string[] = cuisines;
 
     const filters: Filters = {
       categories: selectedCategories,
@@ -65,7 +39,8 @@ function App() {
     { label: 'Dining', value: Categories.dining },
     { label: 'Take-Away', value: Categories.takeaway },
     { label: 'Delivery', value: Categories.delivery },
-    { label: 'Pubs & Bars', value: Categories.pubsBars }
+    { label: 'Pubs & Bars', value: Categories.pubsBars },
+    { label: 'Nightlife', value: Categories.nightlife }
   ];
 
   const cuisineCheckboxes = [
@@ -83,12 +58,18 @@ function App() {
     { label: 'Egyptian', value: Cuisines.egyptian }
   ];
 
+  const getNewCheckboxCollectionVal = (event: any, collection: any[]) => {
+    return event.target.checked
+      ? [...collection, event.target.name]
+      : collection.filter((c) => c !== event.target.name);
+  };
+
   const handleCategoriesChange = (event: any) => {
-    setCategories({ ...categories, [event.target.name]: event.target.checked });
+    setCategories(getNewCheckboxCollectionVal(event, categories));
   };
 
   const handleCuisinesChange = (event: any) => {
-    setCuisines({ ...cuisines, [event.target.name]: event.target.checked });
+    setCuisines(getNewCheckboxCollectionVal(event, cuisines));
   };
 
   return (
@@ -102,7 +83,7 @@ function App() {
               control={
                 <Checkbox
                   key={i}
-                  checked={categories[cb.value as Categories]}
+                  checked={categories.includes(cb.value as Categories)}
                   onChange={handleCategoriesChange}
                   name={cb.value}
                 />
@@ -120,7 +101,7 @@ function App() {
               control={
                 <Checkbox
                   key={i}
-                  checked={cuisines[cb.value as Cuisines]}
+                  checked={cuisines.includes(cb.value as Cuisines)}
                   onChange={handleCuisinesChange}
                   name={cb.value}
                 />
@@ -136,7 +117,9 @@ function App() {
         {results &&
           results.map((r) => (
             <li>
-              <strong>{r.name}</strong> {r.cuisines}
+              <strong>{r.name}</strong> <br />
+              <em>{r.highlights.join(', ')}</em> <br />
+              {r.cuisines}
             </li>
           ))}
       </ul>
