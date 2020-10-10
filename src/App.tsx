@@ -1,4 +1,4 @@
-import React, { useState, useEffect, FunctionComponent } from 'react';
+import React, { useState, useEffect } from 'react';
 import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
@@ -9,18 +9,13 @@ import Slider from '@material-ui/core/Slider';
 import './App.scss';
 import Restaurant from './interfaces/Restaurant';
 import { Categories, Cuisines } from './enums';
-import {
-  Filters,
-  getFilterResults,
-  getCuisines,
-  Sort,
-  SortType,
-  SortOrder
-} from './api/Api';
+import { getFilterResults, getCuisines } from './api/Api';
 import { apiIds } from './api/ApiIdMap';
+import { Filters } from './interfaces/Filters';
+import { Sort, SortType, SortOrder } from './interfaces/Sort';
 
-function App() {
-  const MAX_RECORD_COUNT = 5;
+const App = () => {
+  const MAX_RECORD_COUNT = 20;
 
   const [results, setResults] = useState<Restaurant[]>(null);
   const [resultsTotal, setResultsTotal] = useState<number>(0);
@@ -252,6 +247,9 @@ function App() {
 
       <h1>Results</h1>
       <p>
+        <em>{resultsTotal} results</em>
+      </p>
+      <p>
         Sort: <button onClick={toggleSortType}>{sortType}</button>
         <button onClick={toggleSortOrder}>{sortOrder}</button>
       </p>
@@ -272,6 +270,6 @@ function App() {
       )}
     </div>
   );
-}
+};
 
 export default App;

@@ -1,22 +1,8 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import { Categories, Cuisines } from '../enums';
 import { apiIds } from './ApiIdMap';
-import Restaurant from '../interfaces/Restaurant';
-
-export interface Filters {
-  categories: string[];
-  cuisines: string[];
-  rating?: number[];
-  cost?: number[];
-}
-
-export type SortType = 'rating' | 'cost';
-export type SortOrder = 'asc' | 'desc';
-
-export interface Sort {
-  type: SortType;
-  order: SortOrder;
-}
+import { Filters } from '../interfaces/Filters';
+import { Sort } from '../interfaces/Sort';
 
 const ENTITY_TYPE = 'city';
 const ENTITY_ID = 297; // Adelaide, SA
