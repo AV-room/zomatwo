@@ -19,6 +19,7 @@ export const apiIds = {
     [Cuisines.pizza]: 82,
     [Cuisines.pub]: 983,
     [Cuisines.sandwich]: 304,
-    [Cuisines.egyptian]: 146
+    [Cuisines.egyptian]: 146,
+    [Cuisines.other]: -1 // to get around 'index signature of object type implicitly has any type' error
   }
 };

@@ -9,6 +9,6 @@ export enum Cuisines {
   sandwich = 'sandwich',
   chinese = 'chinese',
   pub = 'pub',
-  // other = 'other',
-  egyptian = 'egyptian'
+  egyptian = 'egyptian',
+  other = 'other'
 }

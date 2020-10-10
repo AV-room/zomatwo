@@ -8,25 +8,40 @@ import Checkbox from '@material-ui/core/Checkbox';
 import './App.scss';
 import Restaurant from './interfaces/Restaurant';
 import { Categories, Cuisines } from './enums';
-import { Filters, getFilterResults } from './api/SearchApi';
+import { Filters, getFilterResults, getCuisines } from './api/Api';
+import { apiIds } from './api/ApiIdMap';
 
 function App() {
   const [results, setResults] = useState<Restaurant[]>(null);
   const [categories, setCategories] = useState<Categories[]>([]);
   const [cuisines, setCuisines] = useState<Cuisines[]>([]);
+  const [otherCuisineIds, setOtherCuisineIds] = useState<number[]>([]); // not the best
 
   useEffect(() => {
-    // extract applied category/cuisine filters
-    const selectedCategories: string[] = categories;
-    const selectedCuisines: string[] = cuisines;
+    // determine other cuisine ids
+    getCuisines().then((res) => {
+      const allCuisineIds = res.data.cuisines.map(
+        (dataItem: { cuisine: { cuisine_id: number } }) =>
+          dataItem.cuisine.cuisine_id
+      );
 
+      // setOtherCuisineIds([247, 287]);
+      setOtherCuisineIds(
+        allCuisineIds.filter(
+          (cId: number) => !Object.values(apiIds.cuisines).includes(cId)
+        )
+      );
+    });
+  }, []);
+
+  useEffect(() => {
+    // query search API for filter results
     const filters: Filters = {
-      categories: selectedCategories,
-      cuisines: selectedCuisines
+      categories,
+      cuisines
     };
 
-    // make API call
-    getFilterResults(filters).then((res) => {
+    getFilterResults(filters, otherCuisineIds).then((res) => {
       const restaurants: Restaurant[] = res.data.restaurants.map(
         (dataItem: { restaurant: {} }) => dataItem.restaurant
       );
@@ -54,8 +69,8 @@ function App() {
     { label: 'Sandwich', value: Cuisines.sandwich },
     { label: 'Chinese', value: Cuisines.chinese },
     { label: 'Pub Food', value: Cuisines.pub },
-    //  { label: 'Other', value: Cuisines.other },
-    { label: 'Egyptian', value: Cuisines.egyptian }
+    { label: 'Egyptian', value: Cuisines.egyptian },
+    { label: 'Other', value: Cuisines.other }
   ];
 
   const getNewCheckboxCollectionVal = (event: any, collection: any[]) => {
