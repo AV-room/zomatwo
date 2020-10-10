@@ -14,4 +14,10 @@ export default interface Restaurant {
   thumb: string; //?
   featured_image: string; //?,
   highlights: string[];
+  average_cost_for_two: number;
+  price_range: number;
+  user_rating: {
+    aggregate_rating: string;
+    rating_text: string;
+  };
 }
