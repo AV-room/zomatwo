@@ -10,5 +10,6 @@ export enum Cuisines {
   chinese = 'chinese',
   pub = 'pub',
   egyptian = 'egyptian',
+  bubbleTea = 'bubbleTea',
   other = 'other'
 }
