@@ -4,18 +4,29 @@ import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-
+import Typography from '@material-ui/core/Typography';
+import Slider from '@material-ui/core/Slider';
 import './App.scss';
 import Restaurant from './interfaces/Restaurant';
 import { Categories, Cuisines } from './enums';
 import { Filters, getFilterResults, getCuisines } from './api/Api';
 import { apiIds } from './api/ApiIdMap';
 
+function ratingValueText(value: any) {
+  return `${value}°C`;
+}
+
+function costValueText(value: any) {
+  return `$${value}`;
+}
+
 function App() {
   const [results, setResults] = useState<Restaurant[]>(null);
   const [categories, setCategories] = useState<Categories[]>([]);
   const [cuisines, setCuisines] = useState<Cuisines[]>([]);
   const [otherCuisineIds, setOtherCuisineIds] = useState<number[]>([]); // not the best
+  const [rating, setRating] = React.useState([0, 5]);
+  const [cost, setCost] = React.useState([0, 500]);
 
   useEffect(() => {
     // determine other cuisine ids
@@ -73,19 +84,49 @@ function App() {
     { label: 'Other', value: Cuisines.other }
   ];
 
-  const getNewCheckboxCollectionVal = (event: any, collection: any[]) => {
+  const getNewCheckboxGroupVal = (event: any, collection: any[]) => {
     return event.target.checked
       ? [...collection, event.target.name]
       : collection.filter((c) => c !== event.target.name);
   };
 
   const handleCategoriesChange = (event: any) => {
-    setCategories(getNewCheckboxCollectionVal(event, categories));
+    setCategories(getNewCheckboxGroupVal(event, categories));
   };
 
   const handleCuisinesChange = (event: any) => {
-    setCuisines(getNewCheckboxCollectionVal(event, cuisines));
+    setCuisines(getNewCheckboxGroupVal(event, cuisines));
   };
+
+  const handleRatingChange = (event: any, newValue: any) => {
+    setRating(newValue);
+  };
+
+  const handleCostChange = (event: any, newValue: any) => {
+    setCost(newValue);
+  };
+
+  const ratingMarks = [
+    {
+      value: 0,
+      label: '0'
+    },
+    {
+      value: 5,
+      label: '5'
+    }
+  ];
+
+  const costMarks = [
+    {
+      value: 0,
+      label: '$'
+    },
+    {
+      value: 500,
+      label: '$$$$'
+    }
+  ];
 
   return (
     <div className="container">
@@ -127,6 +168,40 @@ function App() {
         </FormGroup>
       </FormControl>
 
+      <div className="slider">
+        <Typography id="rating-range-slider" gutterBottom>
+          Rating
+        </Typography>
+        <Slider
+          value={rating}
+          onChange={handleRatingChange}
+          valueLabelDisplay="auto"
+          aria-labelledby="rating-range-slider"
+          getAriaValueText={ratingValueText}
+          min={0}
+          max={5}
+          step={0.1}
+          marks={ratingMarks}
+        />
+      </div>
+
+      <div className="slider">
+        <Typography id="cost-range-slider" gutterBottom>
+          Cost
+        </Typography>
+        <Slider
+          value={cost}
+          onChange={handleCostChange}
+          valueLabelDisplay="auto"
+          aria-labelledby="cost-range-slider"
+          getAriaValueText={costValueText}
+          min={0}
+          max={500}
+          step={10}
+          marks={costMarks}
+        />
+      </div>
+
       <h1>Results</h1>
       <ul>
         {results &&
@@ -134,7 +209,9 @@ function App() {
             <li>
               <strong>{r.name}</strong> <br />
               <em>{r.highlights.join(', ')}</em> <br />
-              {r.cuisines}
+              {r.cuisines} <br />${r.average_cost_for_two}, {r.price_range}{' '}
+              <br />
+              {r.user_rating.aggregate_rating}, {r.user_rating.rating_text}
             </li>
           ))}
       </ul>
