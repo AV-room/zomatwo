@@ -1,11 +1,8 @@
-.container {
-  padding-left: 40px;
-}
-
 .slider {
   width: 300px;
 }
 
+// TODO: remove this later
 .spinner {
   width: 40px;
   height: 40px;
@@ -54,4 +51,45 @@
     transform: scale(1);
     -webkit-transform: scale(1);
   }
+}
+
+.filter-panel {
+  display: flex;
+  background-color: #fff;
+  height: 80vh;
+  padding: 10px;
+  flex-direction: column;
+  overflow: auto;
+
+  @media (min-width: 640px) {
+    height: 20vh;
+    flex-direction: row;
+  }
+
+  .sliders {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.results-panel {
+  display: flex;
+  height: 80vh;
+}
+
+.results-list {
+  flex: 0 0 100%;
+  background-color: #e5e5e5;
+  overflow-y: scroll;
+  padding: 40px;
+
+  @media (min-width: 640px) {
+    flex-basis: 25%;
+  }
+}
+
+.results-details {
+  background-color: #f1f1f1;
+  flex-basis: 75%;
+  padding: 40px;
 }

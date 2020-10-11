@@ -164,115 +164,123 @@ const App = () => {
 
   return (
     <div className="container">
-      <h1>Filters</h1>
-      <FormControl component="fieldset">
-        <FormLabel component="legend">Category</FormLabel>
-        <FormGroup>
-          {categoryCheckboxes.map((cb: { label: string; value: any }, i) => (
-            <FormControlLabel
-              control={
-                <Checkbox
-                  key={i}
-                  checked={categories.includes(cb.value as Categories)}
-                  onChange={handleCategoriesChange}
-                  name={cb.value}
-                />
-              }
-              label={cb.label}
+      <div className="filter-panel">
+        <FormControl component="fieldset">
+          <FormLabel component="legend">Category</FormLabel>
+          <FormGroup>
+            {categoryCheckboxes.map((cb: { label: string; value: any }, i) => (
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    key={i}
+                    checked={categories.includes(cb.value as Categories)}
+                    onChange={handleCategoriesChange}
+                    name={cb.value}
+                  />
+                }
+                label={cb.label}
+              />
+            ))}
+          </FormGroup>
+        </FormControl>
+        <FormControl component="fieldset">
+          <FormLabel component="legend">Cuisines</FormLabel>
+          <FormGroup>
+            {cuisineCheckboxes.map((cb: { label: string; value: any }, i) => (
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    key={i}
+                    checked={cuisines.includes(cb.value as Cuisines)}
+                    onChange={handleCuisinesChange}
+                    name={cb.value}
+                  />
+                }
+                label={cb.label}
+              />
+            ))}
+          </FormGroup>
+        </FormControl>
+
+        <div className="sliders">
+          <div className="slider">
+            <Typography id="rating-range-slider" gutterBottom>
+              Rating
+            </Typography>
+            <Slider
+              value={rating}
+              onChange={handleRatingChange}
+              valueLabelDisplay="auto"
+              aria-labelledby="rating-range-slider"
+              getAriaValueText={ratingValueText}
+              min={0}
+              max={5}
+              step={0.1}
+              marks={ratingMarks}
             />
-          ))}
-        </FormGroup>
-      </FormControl>
-      <FormControl component="fieldset">
-        <FormLabel component="legend">Cuisines</FormLabel>
-        <FormGroup>
-          {cuisineCheckboxes.map((cb: { label: string; value: any }, i) => (
-            <FormControlLabel
-              control={
-                <Checkbox
-                  key={i}
-                  checked={cuisines.includes(cb.value as Cuisines)}
-                  onChange={handleCuisinesChange}
-                  name={cb.value}
-                />
-              }
-              label={cb.label}
+          </div>
+
+          <div className="slider">
+            <Typography id="cost-range-slider" gutterBottom>
+              Cost
+            </Typography>
+            <Slider
+              value={cost}
+              onChange={handleCostChange}
+              valueLabelDisplay="auto"
+              aria-labelledby="cost-range-slider"
+              getAriaValueText={costValueText}
+              min={0}
+              max={500}
+              step={10}
+              marks={costMarks}
             />
-          ))}
-        </FormGroup>
-      </FormControl>
-
-      <div className="slider">
-        <Typography id="rating-range-slider" gutterBottom>
-          Rating
-        </Typography>
-        <Slider
-          value={rating}
-          onChange={handleRatingChange}
-          valueLabelDisplay="auto"
-          aria-labelledby="rating-range-slider"
-          getAriaValueText={ratingValueText}
-          min={0}
-          max={5}
-          step={0.1}
-          marks={ratingMarks}
-        />
-      </div>
-
-      <div className="slider">
-        <Typography id="cost-range-slider" gutterBottom>
-          Cost
-        </Typography>
-        <Slider
-          value={cost}
-          onChange={handleCostChange}
-          valueLabelDisplay="auto"
-          aria-labelledby="cost-range-slider"
-          getAriaValueText={costValueText}
-          min={0}
-          max={500}
-          step={10}
-          marks={costMarks}
-        />
-      </div>
-
-      <h1>Results</h1>
-      {isLoading && (
-        <div className="spinner">
-          <div className="double-bounce1"></div>
-          <div className="double-bounce2"></div>
+          </div>
         </div>
-      )}
+      </div>
 
-      {!isLoading && (
-        <div>
-          <p>
-            <em>
-              {resultsTotal < SEARCH_API_MAX_RESULTS
-                ? resultsTotal
-                : SEARCH_API_MAX_RESULTS}{' '}
-              results
-            </em>
-          </p>
-          {/* <p>
+      <div className="results-panel">
+        <div className="results-list">
+          <h1>
+            Results (
+            {resultsTotal < SEARCH_API_MAX_RESULTS
+              ? resultsTotal
+              : SEARCH_API_MAX_RESULTS}
+            )
+          </h1>
+          {isLoading && (
+            <div className="spinner">
+              <div className="double-bounce1"></div>
+              <div className="double-bounce2"></div>
+            </div>
+          )}
+
+          {!isLoading && (
+            <div>
+              {/* <p>
         Sort: <button onClick={toggleSortType}>{sortType}</button>
         <button onClick={toggleSortOrder}>{sortOrder}</button>
       </p> */}
-          <ul>
-            {results &&
-              results.map((r, i) => (
-                <li>
-                  <strong>
-                    {i + 1}. {r.name}
-                  </strong>{' '}
-                  <br />
-                  <em>{r.cuisines}</em> <br />${r.average_cost_for_two},{' '}
-                  {r.user_rating.aggregate_rating}
-                </li>
-              ))}
-          </ul>
+              <ul>
+                {results &&
+                  results.map((r, i) => (
+                    <li>
+                      <strong>
+                        {i + 1}. {r.name}
+                      </strong>{' '}
+                      <br />
+                      <em>{r.cuisines}</em> <br />${r.average_cost_for_two},{' '}
+                      {r.user_rating.aggregate_rating}
+                    </li>
+                  ))}
+              </ul>
+            </div>
+          )}
         </div>
-      )}
+        <div className="results-details">
+          <h1>Details</h1>
+        </div>
+      </div>
     </div>
   );
 };
