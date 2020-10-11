@@ -38,10 +38,13 @@ const Details: React.FC<DetailsProps> = ({ restaurant }) => {
           <dd>{restaurant.phone_numbers}</dd>
           <dt>Opening hours</dt>
           <dd>{restaurant.timings}</dd>
+
           <dt>Price</dt>
           <dd>{convertPriceBracketToSymbol(restaurant.price_range)}</dd>
           <dt>Average rating</dt>
           <dd>{restaurant.user_rating.aggregate_rating}/5 </dd>
+          <dt>Good to know</dt>
+          <dd>{restaurant.highlights.join(', ')}</dd>
         </dl>
       </div>
     </div>

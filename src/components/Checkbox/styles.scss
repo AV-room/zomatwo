@@ -1,0 +1,34 @@
+.cb-container {
+  margin-right: 50px;
+  margin-bottom: 20px;
+  height: 100%;
+  font-size: 0.57em;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+fieldset {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.57em;
+}
+
+legend {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  margin-bottom: 10px;
+}
+
+label {
+  margin-right: 50px;
+}
+
+input[type='checkbox'] {
+  background-color: #e5e5e5;
+  outline: none;
+}

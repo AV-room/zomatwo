@@ -1,9 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import FormLabel from '@material-ui/core/FormLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
 import './App.scss';
@@ -14,6 +9,7 @@ import { apiIds } from './api/ApiIdMap';
 import { Filters } from './interfaces/Filters';
 import ScrollableList from './components/ScrollableList';
 import Details from './components/Details';
+import CheckboxGroup from './components/Checkbox';
 // import { Sort, SortType, SortOrder } from './interfaces/Sort';
 
 const App = () => {
@@ -96,7 +92,7 @@ const App = () => {
     { label: 'Dining', value: Categories.dining },
     { label: 'Take-Away', value: Categories.takeaway },
     { label: 'Delivery', value: Categories.delivery },
-    { label: 'Pubs & Bars', value: Categories.pubsBars },
+    // { label: 'Pubs & Bars', value: Categories.pubsBars },
     { label: 'Nightlife', value: Categories.nightlife }
   ];
 
@@ -111,23 +107,16 @@ const App = () => {
     { label: 'Sandwich', value: Cuisines.sandwich },
     { label: 'Chinese', value: Cuisines.chinese },
     { label: 'Pub Food', value: Cuisines.pub },
-    { label: 'Egyptian', value: Cuisines.egyptian },
     { label: 'Bubble Tea', value: Cuisines.bubbleTea },
     { label: 'Other', value: Cuisines.other }
   ];
 
-  const getNewCheckboxGroupVal = (event: any, collection: any[]) => {
-    return event.target.checked
-      ? [...collection, event.target.name]
-      : collection.filter((c) => c !== event.target.name);
+  const handleCategoriesChange = (categories: Categories[]) => {
+    setCategories(categories);
   };
 
-  const handleCategoriesChange = (event: any) => {
-    setCategories(getNewCheckboxGroupVal(event, categories));
-  };
-
-  const handleCuisinesChange = (event: any) => {
-    setCuisines(getNewCheckboxGroupVal(event, cuisines));
+  const handleCuisinesChange = (cuisines: Cuisines[]) => {
+    setCuisines(cuisines);
   };
 
   const handleRatingChange = (event: any, newValue: any) => {
@@ -167,44 +156,19 @@ const App = () => {
   return (
     <div className="container">
       <div className="filter-panel">
-        <FormControl component="fieldset">
-          <FormLabel component="legend">Category</FormLabel>
-          <FormGroup>
-            {categoryCheckboxes.map((cb: { label: string; value: any }, i) => (
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    key={i}
-                    checked={categories.includes(cb.value as Categories)}
-                    onChange={handleCategoriesChange}
-                    name={cb.value}
-                  />
-                }
-                label={cb.label}
-              />
-            ))}
-          </FormGroup>
-        </FormControl>
-        <FormControl component="fieldset">
-          <FormLabel component="legend">Cuisines</FormLabel>
-          <FormGroup>
-            {cuisineCheckboxes.map((cb: { label: string; value: any }, i) => (
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    key={i}
-                    checked={cuisines.includes(cb.value as Cuisines)}
-                    onChange={handleCuisinesChange}
-                    name={cb.value}
-                  />
-                }
-                label={cb.label}
-              />
-            ))}
-          </FormGroup>
-        </FormControl>
-
-        <div className="sliders">
+        <CheckboxGroup
+          name="category"
+          label="Category"
+          childLabelValues={categoryCheckboxes}
+          onChange={handleCategoriesChange}
+        />
+        <CheckboxGroup
+          name="cuisine"
+          label="Cuisine"
+          childLabelValues={cuisineCheckboxes}
+          onChange={handleCuisinesChange}
+        />
+        {/* <div className="sliders">
           <div className="slider">
             <Typography id="rating-range-slider" gutterBottom>
               Rating
@@ -238,7 +202,7 @@ const App = () => {
               marks={costMarks}
             />
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="results-panel">
