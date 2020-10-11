@@ -9,14 +9,11 @@ import Slider from '@material-ui/core/Slider';
 import './App.scss';
 import Restaurant from './interfaces/Restaurant';
 import { Categories, Cuisines } from './enums';
-import {
-  getFilteredResults,
-  getCuisines,
-  SEARCH_API_MAX_RESULTS
-} from './api/Api';
+import { getFilteredResults, getCuisines } from './api/Api';
 import { apiIds } from './api/ApiIdMap';
 import { Filters } from './interfaces/Filters';
 import ScrollableList from './components/ScrollableList';
+import Details from './components/Details';
 // import { Sort, SortType, SortOrder } from './interfaces/Sort';
 
 const App = () => {
@@ -252,11 +249,11 @@ const App = () => {
           </div>
         )}
         {!isLoading && results && (
-          <ScrollableList list={results} handleSelection={handleSelection} />
+          <div className="list-and-details">
+            <ScrollableList list={results} handleSelection={handleSelection} />
+            <Details restaurant={results[selected]} />
+          </div>
         )}
-        <div className="results-details">
-          <h1>Details</h1>
-        </div>
       </div>
     </div>
   );

@@ -1,0 +1,28 @@
+.results-details-container {
+  background-color: #ededed;
+  flex: 0 0 75%;
+  padding: 50px;
+}
+
+.details-container {
+  display: flex;
+}
+
+.image {
+  width: 275px;
+  height: 275px;
+  margin-right: 50px;
+}
+
+header {
+  .title {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+  }
+
+  .byline {
+    font-family: 'Open Sans', sans-serif;
+    margin: 5px 0 0 0;
+  }
+}
