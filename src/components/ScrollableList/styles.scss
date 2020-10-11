@@ -1,0 +1,32 @@
+.results-list {
+  flex: 100%;
+  $list-padding-left: 50px;
+  background-color: #e0e0e0;
+  overflow-y: scroll;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+
+  @media (min-width: 640px) {
+    flex-basis: 25%;
+  }
+
+  h2 {
+    font-size: 0.57em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    padding-left: $list-padding-left;
+    margin-top: 23px;
+    margin-bottom: 15px;
+  }
+
+  ul {
+    list-style-type: none;
+
+    li {
+      border-top: 1px solid lightgray;
+      padding: 10px $list-padding-left;
+      font-size: 0.8em;
+      line-height: 19px;
+    }
+  }
+}

@@ -6,7 +6,6 @@
 .spinner {
   width: 40px;
   height: 40px;
-
   position: relative;
   margin: 100px auto;
 }
@@ -75,17 +74,6 @@
 .results-panel {
   display: flex;
   height: 80vh;
-}
-
-.results-list {
-  flex: 0 0 100%;
-  background-color: #e5e5e5;
-  overflow-y: scroll;
-  padding: 40px;
-
-  @media (min-width: 640px) {
-    flex-basis: 25%;
-  }
 }
 
 .results-details {

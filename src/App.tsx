@@ -16,6 +16,7 @@ import {
 } from './api/Api';
 import { apiIds } from './api/ApiIdMap';
 import { Filters } from './interfaces/Filters';
+import ScrollableList from './components/ScrollableList';
 // import { Sort, SortType, SortOrder } from './interfaces/Sort';
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
   const [otherCuisineIds, setOtherCuisineIds] = useState<number[]>([]); // not the best
   const [rating, setRating] = useState<number[]>([0, 5]);
   const [cost, setCost] = useState<number[]>([0, 500]);
+  const [selected, setSelected] = useState<number>(null);
   // const [sortType, setSortType] = useState<string>('cost');
   // const [sortOrder, setSortOrder] = useState<string>('desc');
 
@@ -71,7 +73,6 @@ const App = () => {
     ).then((filteredRestaurants: Restaurant[]) => {
       setResults(filteredRestaurants);
       setResultsTotal(filteredRestaurants.length);
-
       setIsLoading(false);
     });
   }, [
@@ -138,6 +139,10 @@ const App = () => {
 
   const handleCostChange = (event: any, newValue: any) => {
     setCost(newValue);
+  };
+
+  const handleSelection = (restaurantId: number) => {
+    setSelected(restaurantId);
   };
 
   const ratingMarks = [
@@ -240,43 +245,15 @@ const App = () => {
       </div>
 
       <div className="results-panel">
-        <div className="results-list">
-          <h1>
-            Results (
-            {resultsTotal < SEARCH_API_MAX_RESULTS
-              ? resultsTotal
-              : SEARCH_API_MAX_RESULTS}
-            )
-          </h1>
-          {isLoading && (
-            <div className="spinner">
-              <div className="double-bounce1"></div>
-              <div className="double-bounce2"></div>
-            </div>
-          )}
-
-          {!isLoading && (
-            <div>
-              {/* <p>
-        Sort: <button onClick={toggleSortType}>{sortType}</button>
-        <button onClick={toggleSortOrder}>{sortOrder}</button>
-      </p> */}
-              <ul>
-                {results &&
-                  results.map((r, i) => (
-                    <li>
-                      <strong>
-                        {i + 1}. {r.name}
-                      </strong>{' '}
-                      <br />
-                      <em>{r.cuisines}</em> <br />${r.average_cost_for_two},{' '}
-                      {r.user_rating.aggregate_rating}
-                    </li>
-                  ))}
-              </ul>
-            </div>
-          )}
-        </div>
+        {isLoading && (
+          <div className="spinner">
+            <div className="double-bounce1"></div>
+            <div className="double-bounce2"></div>
+          </div>
+        )}
+        {!isLoading && results && (
+          <ScrollableList list={results} handleSelection={handleSelection} />
+        )}
         <div className="results-details">
           <h1>Details</h1>
         </div>
