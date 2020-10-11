@@ -6,11 +6,12 @@ import { Sort } from '../interfaces/Sort';
 import { SearchResponse } from '../interfaces/SearchResponse';
 import { SearchParams } from '../interfaces/SearchParams';
 
+export const SEARCH_API_MAX_RESULTS = 100;
 const ENTITY_TYPE = 'city';
 const ENTITY_ID = 297; // Adelaide
 // const MAX_RECORD_COUNT = 20;
 const baseUrl = 'https://developers.zomato.com/api/v2.1';
-const userKey = 'd7d72ddcee1493db536aeeb88ae2440c';
+const userKey = '3bf73322184a4f70d9f4d634ec1c9fc2'; // 'd7d72ddcee1493db536aeeb88ae2440c';
 
 export const getCuisines = () => {
   const route = '/cuisines';
@@ -64,7 +65,6 @@ export const getFiltered = async (
 const collectFilterResponses = async (
   params: SearchParams
 ): Promise<SearchResponse[]> => {
-  const SEARCH_API_MAX = 100;
   const BATCH_TOTAL = 20;
   let startIndex = 0;
   let totalResults: number = null;
@@ -77,7 +77,7 @@ const collectFilterResponses = async (
     }
     promises.push(querySearchApi({ ...params, start: startIndex }));
     startIndex = startIndex + BATCH_TOTAL;
-  } while (startIndex < Math.min(totalResults, SEARCH_API_MAX));
+  } while (startIndex < Math.min(totalResults, SEARCH_API_MAX_RESULTS));
 
   return await Promise.all(promises);
 };

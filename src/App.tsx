@@ -9,7 +9,7 @@ import Slider from '@material-ui/core/Slider';
 import './App.scss';
 import Restaurant from './interfaces/Restaurant';
 import { Categories, Cuisines } from './enums';
-import { getFiltered, getCuisines } from './api/Api';
+import { getFiltered, getCuisines, SEARCH_API_MAX_RESULTS } from './api/Api';
 import { apiIds } from './api/ApiIdMap';
 import { Filters } from './interfaces/Filters';
 import { Sort, SortType, SortOrder } from './interfaces/Sort';
@@ -250,7 +250,12 @@ const App = () => {
 
       <h1>Results</h1>
       <p>
-        <em>{resultsTotal} results</em>
+        <em>
+          {resultsTotal < SEARCH_API_MAX_RESULTS
+            ? resultsTotal
+            : SEARCH_API_MAX_RESULTS}{' '}
+          results
+        </em>
       </p>
       <p>
         Sort: <button onClick={toggleSortType}>{sortType}</button>
