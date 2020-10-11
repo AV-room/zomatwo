@@ -3,9 +3,12 @@ import { Categories, Cuisines } from '../enums';
 import { apiIds } from './ApiIdMap';
 import { Filters } from '../interfaces/Filters';
 import { Sort } from '../interfaces/Sort';
+import { SearchResponse } from '../interfaces/SearchResponse';
+import { SearchParams } from '../interfaces/SearchParams';
 
 const ENTITY_TYPE = 'city';
-const ENTITY_ID = 297; // Adelaide, SA
+const ENTITY_ID = 297; // Adelaide
+// const MAX_RECORD_COUNT = 20;
 const baseUrl = 'https://developers.zomato.com/api/v2.1';
 const userKey = 'd7d72ddcee1493db536aeeb88ae2440c';
 
@@ -27,13 +30,13 @@ export const getCuisines = () => {
   return axios(requestOptions);
 };
 
-export const getFilterResults = (
+export const getFiltered = async (
   filters: Filters,
   sorting: Sort,
-  paginationStart: number,
-  maxRecordCount: number,
+  // paginationStart: number = 0,
+  // maxRecordCount: number = MAX_RECORD_COUNT,
   otherCuisineIds: number[]
-) => {
+): Promise<SearchResponse[]> => {
   const categoryIds = filters.categories.map(
     (c: string) => apiIds.categories[c as Categories]
   );
@@ -44,9 +47,42 @@ export const getFilterResults = (
       : apiIds.cuisines[c as Cuisines];
   });
 
-  // console.log('categoryIds', categoryIds);
-  // console.log('cuisineIds', cuisineIds);
+  const params: SearchParams = {
+    entity_type: ENTITY_TYPE,
+    entity_id: ENTITY_ID,
+    category: categoryIds.join(),
+    cuisines: cuisineIds.join(),
+    sort: sorting.type,
+    order: sorting.order
+    // start: paginationStart,
+    // count: maxRecordCount
+  };
 
+  return collectFilterResponses(params);
+};
+
+const collectFilterResponses = async (
+  params: SearchParams
+): Promise<SearchResponse[]> => {
+  const SEARCH_API_MAX = 100;
+  const BATCH_TOTAL = 20;
+  let startIndex = 0;
+  let totalResults: number = null;
+  const promises = [];
+  do {
+    if (startIndex === 0) {
+      // doing an extra request here...
+      const res = await querySearchApi({ ...params, start: startIndex });
+      totalResults = await res.data.results_found;
+    }
+    promises.push(querySearchApi({ ...params, start: startIndex }));
+    startIndex = startIndex + BATCH_TOTAL;
+  } while (startIndex < Math.min(totalResults, SEARCH_API_MAX));
+
+  return await Promise.all(promises);
+};
+
+const querySearchApi = async (params: SearchParams) => {
   const route = '/search';
   const requestOptions: AxiosRequestConfig = {
     url: `${baseUrl}${route}`,
@@ -56,16 +92,7 @@ export const getFilterResults = (
       'Content-Type': 'application/json;charset=UTF-8',
       'user-key': userKey
     },
-    params: {
-      entity_type: ENTITY_TYPE,
-      entity_id: ENTITY_ID,
-      category: categoryIds.join(),
-      cuisines: cuisineIds.join(),
-      sort: sorting.type,
-      order: sorting.order,
-      start: paginationStart,
-      count: maxRecordCount
-    }
+    params
   };
 
   return axios(requestOptions);

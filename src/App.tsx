@@ -9,17 +9,18 @@ import Slider from '@material-ui/core/Slider';
 import './App.scss';
 import Restaurant from './interfaces/Restaurant';
 import { Categories, Cuisines } from './enums';
-import { getFilterResults, getCuisines } from './api/Api';
+import { getFiltered, getCuisines } from './api/Api';
 import { apiIds } from './api/ApiIdMap';
 import { Filters } from './interfaces/Filters';
 import { Sort, SortType, SortOrder } from './interfaces/Sort';
+import { SearchResponse } from './interfaces/SearchResponse';
 
 const App = () => {
-  const MAX_RECORD_COUNT = 20;
+  // const MAX_RECORD_COUNT = 20;
 
   const [results, setResults] = useState<Restaurant[]>(null);
   const [resultsTotal, setResultsTotal] = useState<number>(0);
-  const [paginationStartIndex, setPaginationStartIndex] = useState<number>(0);
+  // const [paginationStartIndex, setPaginationStartIndex] = useState<number>(0);
   const [categories, setCategories] = useState<Categories[]>([]);
   const [cuisines, setCuisines] = useState<Cuisines[]>([]);
   const [otherCuisineIds, setOtherCuisineIds] = useState<number[]>([]); // not the best
@@ -36,7 +37,6 @@ const App = () => {
         (dataItem: { cuisine: { cuisine_id: number } }) =>
           dataItem.cuisine.cuisine_id
       );
-
       // setOtherCuisineIds([247, 287]);
       setOtherCuisineIds(
         allCuisineIds.filter(
@@ -47,7 +47,6 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    // query search API for filter results
     const filters: Filters = {
       categories,
       cuisines
@@ -58,20 +57,24 @@ const App = () => {
       order: sortOrder as SortOrder
     };
 
-    getFilterResults(
+    getFiltered(
       filters,
       sorting,
-      paginationStartIndex,
-      MAX_RECORD_COUNT,
+      // paginationStartIndex,
+      // MAX_RECORD_COUNT,
       otherCuisineIds
-    ).then((res) => {
-      const restaurants: Restaurant[] = res.data.restaurants.map(
-        (dataItem: { restaurant: {} }) => dataItem.restaurant
-      );
+    ).then((allResults: SearchResponse[]) => {
+      const allRestaurants = allResults.reduce((acc, curr: SearchResponse) => {
+        const restaurants = curr.data.restaurants.map(
+          (dataItem: { restaurant: {} }) => dataItem.restaurant
+        );
 
-      setResultsTotal(res.data.results_found);
-      setPaginationStartIndex(res.data.results_start);
-      setResults(restaurants);
+        return [...acc, ...restaurants];
+      }, []);
+
+      setResultsTotal(allResults[0].data.results_found);
+      // setPaginationStartIndex(allResults[0].data.results_start);
+      setResults(allRestaurants);
     });
   }, [categories, cuisines, sortType, sortOrder, loadMoreCount]);
 
@@ -110,9 +113,9 @@ const App = () => {
     { label: 'Other', value: Cuisines.other }
   ];
 
-  const resetPaginationState = () => {
-    setPaginationStartIndex(0);
-  };
+  // const resetPaginationState = () => {
+  //   setPaginationStartIndex(0);
+  // };
 
   const getNewCheckboxGroupVal = (event: any, collection: any[]) => {
     return event.target.checked
@@ -122,32 +125,32 @@ const App = () => {
 
   const handleCategoriesChange = (event: any) => {
     setCategories(getNewCheckboxGroupVal(event, categories));
-    resetPaginationState();
+    // resetPaginationState();
   };
 
   const handleCuisinesChange = (event: any) => {
     setCuisines(getNewCheckboxGroupVal(event, cuisines));
-    resetPaginationState();
+    // resetPaginationState();
   };
 
   const handleRatingChange = (event: any, newValue: any) => {
     setRating(newValue);
-    resetPaginationState();
+    // resetPaginationState();
   };
 
   const handleCostChange = (event: any, newValue: any) => {
     setCost(newValue);
-    resetPaginationState();
+    // resetPaginationState();
   };
 
-  const handleLoadMoreClick = () => {
-    setLoadMoreCount(loadMoreCount + 1);
-    setPaginationStartIndex(paginationStartIndex + MAX_RECORD_COUNT);
-  };
+  // const handleLoadMoreClick = () => {
+  //   setLoadMoreCount(loadMoreCount + 1);
+  //   setPaginationStartIndex(paginationStartIndex + MAX_RECORD_COUNT);
+  // };
 
-  const showLoadMore = () => {
-    return paginationStartIndex + MAX_RECORD_COUNT < resultsTotal;
-  };
+  // const showLoadMore = () => {
+  //   return paginationStartIndex + MAX_RECORD_COUNT < resultsTotal;
+  // };
 
   const ratingMarks = [
     {
@@ -255,9 +258,12 @@ const App = () => {
       </p>
       <ul>
         {results &&
-          results.map((r) => (
+          results.map((r, i) => (
             <li>
-              <strong>{r.name}</strong> <br />
+              <strong>
+                {i + 1}. {r.name}
+              </strong>{' '}
+              <br />
               <em>{r.cuisines}</em> <br />${r.average_cost_for_two},{' '}
               {r.price_range} <br />
               {r.user_rating.aggregate_rating}, {r.user_rating.rating_text}
@@ -265,9 +271,9 @@ const App = () => {
           ))}
       </ul>
 
-      {showLoadMore() && (
+      {/* {showLoadMore() && (
         <button onClick={handleLoadMoreClick}>Load more</button>
-      )}
+      )} */}
     </div>
   );
 };
