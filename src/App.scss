@@ -56,18 +56,37 @@
   display: flex;
   background-color: #fff;
   height: 80vh;
-  padding: 30px 40px;
+  padding: 20px 50px;
   flex-direction: column;
+  justify-content: space-between;
 
-  @media (min-width: 640px) {
+  @media (min-width: 890px) {
     flex-direction: row;
     height: 20vh;
     min-height: 150px;
   }
 
+  .checkbox-groups {
+    display: flex;
+  }
+
   .sliders {
     display: flex;
     flex-direction: column;
+
+    p {
+      font-family: 'Open Sans';
+      font-size: 0.57em;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+    }
+
+    span {
+      font-family: 'Open Sans';
+      font-size: 0.75em;
+      letter-spacing: 0.7px;
+    }
   }
 }
 

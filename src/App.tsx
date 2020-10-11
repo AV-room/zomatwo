@@ -156,19 +156,22 @@ const App = () => {
   return (
     <div className="container">
       <div className="filter-panel">
-        <CheckboxGroup
-          name="category"
-          label="Category"
-          childLabelValues={categoryCheckboxes}
-          onChange={handleCategoriesChange}
-        />
-        <CheckboxGroup
-          name="cuisine"
-          label="Cuisine"
-          childLabelValues={cuisineCheckboxes}
-          onChange={handleCuisinesChange}
-        />
-        {/* <div className="sliders">
+        <div className="checkbox-groups">
+          <CheckboxGroup
+            name="category"
+            label="Category"
+            childLabelValues={categoryCheckboxes}
+            onChange={handleCategoriesChange}
+          />
+          <CheckboxGroup
+            name="cuisine"
+            label="Cuisine"
+            childLabelValues={cuisineCheckboxes}
+            onChange={handleCuisinesChange}
+          />
+        </div>
+
+        <div className="sliders">
           <div className="slider">
             <Typography id="rating-range-slider" gutterBottom>
               Rating
@@ -202,7 +205,7 @@ const App = () => {
               marks={costMarks}
             />
           </div>
-        </div> */}
+        </div>
       </div>
 
       <div className="results-panel">
