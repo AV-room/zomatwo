@@ -23,6 +23,42 @@ header {
 
   .byline {
     font-family: 'Open Sans', sans-serif;
-    margin: 5px 0 0 0;
+    font-size: 0.8em;
+    margin: 5px 0 20px 0;
+  }
+}
+
+.notables {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8em;
+  margin-bottom: 20px;
+
+  svg {
+    font-size: 1.3em;
+    margin-right: 10px;
+
+    &[data-icon='check'] {
+      color: #50bf55;
+    }
+
+    &[data-icon='times'] {
+      color: #bf5050;
+    }
+  }
+}
+
+.details {
+  font-family: 'Open Sans', sans-serif;
+
+  dt {
+    font-size: 0.75em;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 20px;
+  }
+
+  dd {
+    font-size: 1.1em;
+    margin: 0 0 20px 0;
   }
 }

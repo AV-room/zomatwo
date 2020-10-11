@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 import './styles.scss';
 import Restaurant from '../../interfaces/Restaurant';
 import { convertPriceBracketToSymbol } from '../../utils/helpers';
@@ -29,8 +31,9 @@ const ScrollableList: React.FC<ScrollableListProps> = ({
               <div className="quick-bits">
                 <span>{r.cuisines}</span> <br />
                 <span>
-                  {convertPriceBracketToSymbol(r.price_range)} |{' '}
-                  {r.user_rating.aggregate_rating}
+                  <FontAwesomeIcon icon={faStar} />
+                  {r.user_rating.aggregate_rating} |
+                  {convertPriceBracketToSymbol(r.price_range)}
                 </span>
               </div>
             </li>
