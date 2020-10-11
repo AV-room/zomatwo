@@ -27,6 +27,18 @@
       padding: 10px $list-padding-left;
       font-size: 0.8em;
       line-height: 19px;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: lightgray;
+        cursor: pointer;
+      }
+
+      .quick-bits {
+        font-size: 0.8em;
+        line-height: 14px;
+      }
     }
   }
 }
