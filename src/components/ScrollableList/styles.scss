@@ -30,7 +30,8 @@
 
       &:hover,
       &:active,
-      &:focus {
+      &:focus,
+      &.selected {
         background-color: lightgray;
         cursor: pointer;
       }
