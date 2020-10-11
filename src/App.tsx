@@ -19,6 +19,7 @@ import { Filters } from './interfaces/Filters';
 // import { Sort, SortType, SortOrder } from './interfaces/Sort';
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [results, setResults] = useState<Restaurant[]>(null);
   const [resultsTotal, setResultsTotal] = useState<number>(0);
   const [categories, setCategories] = useState<Categories[]>([]);
@@ -30,6 +31,8 @@ const App = () => {
   // const [sortOrder, setSortOrder] = useState<string>('desc');
 
   useEffect(() => {
+    setIsLoading(true);
+
     // determine other cuisine ids
     getCuisines().then((res) => {
       const allCuisineIds = res.data.cuisines.map(
@@ -42,10 +45,14 @@ const App = () => {
           (cId: number) => !Object.values(apiIds.cuisines).includes(cId)
         )
       );
+
+      setIsLoading(false);
     });
   }, []);
 
   useEffect(() => {
+    setIsLoading(true);
+
     const filters: Filters = {
       categories,
       cuisines,
@@ -64,6 +71,8 @@ const App = () => {
     ).then((filteredRestaurants: Restaurant[]) => {
       setResults(filteredRestaurants);
       setResultsTotal(filteredRestaurants.length);
+
+      setIsLoading(false);
     });
   }, [
     categories,
@@ -228,31 +237,42 @@ const App = () => {
       </div>
 
       <h1>Results</h1>
-      <p>
-        <em>
-          {resultsTotal < SEARCH_API_MAX_RESULTS
-            ? resultsTotal
-            : SEARCH_API_MAX_RESULTS}{' '}
-          results
-        </em>
-      </p>
-      {/* <p>
+      {isLoading && (
+        <div className="spinner">
+          <div className="double-bounce1"></div>
+          <div className="double-bounce2"></div>
+        </div>
+      )}
+
+      {!isLoading && (
+        <div>
+          <p>
+            <em>
+              {resultsTotal < SEARCH_API_MAX_RESULTS
+                ? resultsTotal
+                : SEARCH_API_MAX_RESULTS}{' '}
+              results
+            </em>
+          </p>
+          {/* <p>
         Sort: <button onClick={toggleSortType}>{sortType}</button>
         <button onClick={toggleSortOrder}>{sortOrder}</button>
       </p> */}
-      <ul>
-        {results &&
-          results.map((r, i) => (
-            <li>
-              <strong>
-                {i + 1}. {r.name}
-              </strong>{' '}
-              <br />
-              <em>{r.cuisines}</em> <br />${r.average_cost_for_two},{' '}
-              {r.user_rating.aggregate_rating}
-            </li>
-          ))}
-      </ul>
+          <ul>
+            {results &&
+              results.map((r, i) => (
+                <li>
+                  <strong>
+                    {i + 1}. {r.name}
+                  </strong>{' '}
+                  <br />
+                  <em>{r.cuisines}</em> <br />${r.average_cost_for_two},{' '}
+                  {r.user_rating.aggregate_rating}
+                </li>
+              ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };
