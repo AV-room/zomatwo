@@ -1,3 +1,9 @@
+@import './sass/_base.scss';
+@import './sass/typography.scss';
+
+@include reset();
+@include typography();
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
