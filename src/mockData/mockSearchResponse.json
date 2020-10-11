@@ -1,0 +1,1644 @@
+{
+  "data": {
+    "results_found": 145,
+    "results_start": 0,
+    "results_shown": 20,
+    "restaurants": [
+      {
+        "restaurant": {
+          "R": {
+            "has_menu_status": { "delivery": -1, "takeaway": -1 },
+            "res_id": 16588112,
+            "is_grocery_store": false
+          },
+          "apikey": "d7d72ddcee1493db536aeeb88ae2440c",
+          "id": "16588112",
+          "name": "Soto's Fish Shop",
+          "url": "https://www.zomato.com/adelaide/sotos-fish-shop-semaphore?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "location": {
+            "address": "23 Semaphore Road, Semaphore, Adelaide",
+            "locality": "Semaphore Road, Semaphore",
+            "city": "Adelaide",
+            "city_id": 297,
+            "latitude": "-34.8387298019",
+            "longitude": "138.4820457548",
+            "zipcode": "5019",
+            "country_id": 14,
+            "locality_verbose": "Semaphore Road, Semaphore, Adelaide, SA"
+          },
+          "switch_to_order_menu": 0,
+          "cuisines": "Fish and Chips",
+          "timings": "11:30 AM to 8 PM (Mon-Sun)",
+          "average_cost_for_two": 30,
+          "price_range": 2,
+          "currency": "$",
+          "highlights": [
+            "Credit Card",
+            "Dinner",
+            "Takeaway Available",
+            "Lunch",
+            "Indoor Seating",
+            "Vegetarian Friendly",
+            "Kid Friendly"
+          ],
+          "offers": [],
+          "opentable_support": 0,
+          "is_zomato_book_res": 0,
+          "mezzo_provider": "OTHER",
+          "is_book_form_web_view": 0,
+          "book_form_web_view_url": "",
+          "book_again_url": "",
+          "thumb": "https://b.zmtcdn.com/data/res_imagery/16588112_RESTAURANT_186cb63d97ad6b31ebb55ab79db491ad.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+          "user_rating": {
+            "aggregate_rating": "4.0",
+            "rating_text": "Very Good",
+            "rating_color": "5BA829",
+            "rating_obj": {
+              "title": { "text": "4.0" },
+              "bg_color": { "type": "lime", "tint": "600" }
+            },
+            "votes": 97
+          },
+          "all_reviews_count": 43,
+          "photos_url": "https://www.zomato.com/adelaide/sotos-fish-shop-semaphore/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop",
+          "photo_count": 19,
+          "menu_url": "https://www.zomato.com/adelaide/sotos-fish-shop-semaphore/menu?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1&openSwipeBox=menu&showMinimal=1#tabtop",
+          "featured_image": "https://b.zmtcdn.com/data/res_imagery/16588112_RESTAURANT_186cb63d97ad6b31ebb55ab79db491ad.jpg",
+          "has_online_delivery": 0,
+          "is_delivering_now": 0,
+          "store_type": "",
+          "include_bogo_offers": true,
+          "deeplink": "zomato://restaurant/16588112",
+          "is_table_reservation_supported": 0,
+          "has_table_booking": 0,
+          "events_url": "https://www.zomato.com/adelaide/sotos-fish-shop-semaphore/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "phone_numbers": "(08) 8449 1270",
+          "all_reviews": {
+            "reviews": [
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] }
+            ]
+          },
+          "establishment": [],
+          "establishment_types": []
+        }
+      },
+      {
+        "restaurant": {
+          "R": {
+            "has_menu_status": { "delivery": -1, "takeaway": -1 },
+            "res_id": 16588113,
+            "is_grocery_store": false
+          },
+          "apikey": "d7d72ddcee1493db536aeeb88ae2440c",
+          "id": "16588113",
+          "name": "The Stunned Mullet",
+          "url": "https://www.zomato.com/adelaide/the-stunned-mullet-henley-south?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "location": {
+            "address": "8 East Terrace, Henley Beach, Adelaide",
+            "locality": "Henley Beach Road, Henley South",
+            "city": "Adelaide",
+            "city_id": 297,
+            "latitude": "-34.9255867657",
+            "longitude": "138.4980213270",
+            "zipcode": "5022",
+            "country_id": 14,
+            "locality_verbose": "Henley Beach Road, Henley South, Adelaide, SA"
+          },
+          "switch_to_order_menu": 0,
+          "cuisines": "Fish and Chips",
+          "timings": "Closed (Mon-Tue),11:30 AM to 8 PM (Wed-Sun)",
+          "average_cost_for_two": 25,
+          "price_range": 1,
+          "currency": "$",
+          "highlights": [
+            "Credit Card",
+            "Dinner",
+            "Takeaway Available",
+            "Lunch",
+            "Vegetarian Friendly"
+          ],
+          "offers": [],
+          "opentable_support": 0,
+          "is_zomato_book_res": 0,
+          "mezzo_provider": "OTHER",
+          "is_book_form_web_view": 0,
+          "book_form_web_view_url": "",
+          "book_again_url": "",
+          "thumb": "https://b.zmtcdn.com/data/res_imagery/16588113_RESTAURANT_8541ed1d6c8cc50cef05c6bfd83e0dc2.JPG?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+          "user_rating": {
+            "aggregate_rating": "3.6",
+            "rating_text": "Good",
+            "rating_color": "9ACD32",
+            "rating_obj": {
+              "title": { "text": "3.6" },
+              "bg_color": { "type": "lime", "tint": "600" }
+            },
+            "votes": 70
+          },
+          "all_reviews_count": 33,
+          "photos_url": "https://www.zomato.com/adelaide/the-stunned-mullet-henley-south/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop",
+          "photo_count": 9,
+          "menu_url": "https://www.zomato.com/adelaide/the-stunned-mullet-henley-south/menu?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1&openSwipeBox=menu&showMinimal=1#tabtop",
+          "featured_image": "https://b.zmtcdn.com/data/res_imagery/16588113_RESTAURANT_8541ed1d6c8cc50cef05c6bfd83e0dc2.JPG",
+          "has_online_delivery": 0,
+          "is_delivering_now": 0,
+          "store_type": "",
+          "include_bogo_offers": true,
+          "deeplink": "zomato://restaurant/16588113",
+          "is_table_reservation_supported": 0,
+          "has_table_booking": 0,
+          "events_url": "https://www.zomato.com/adelaide/the-stunned-mullet-henley-south/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "phone_numbers": "(08) 8356 7696",
+          "all_reviews": {
+            "reviews": [
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] }
+            ]
+          },
+          "establishment": [],
+          "establishment_types": []
+        }
+      },
+      {
+        "restaurant": {
+          "R": {
+            "has_menu_status": { "delivery": -1, "takeaway": -1 },
+            "res_id": 16586931,
+            "is_grocery_store": false
+          },
+          "apikey": "d7d72ddcee1493db536aeeb88ae2440c",
+          "id": "16586931",
+          "name": "Fish Out Of Water Hyde Park",
+          "url": "https://www.zomato.com/adelaide/fish-out-of-water-hyde-park-hyde-park?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "location": {
+            "address": "117 King William Road, Hyde Park, Adelaide",
+            "locality": "King William Road, Wayville",
+            "city": "Adelaide",
+            "city_id": 297,
+            "latitude": "-34.9508572359",
+            "longitude": "138.5997353867",
+            "zipcode": "5061",
+            "country_id": 14,
+            "locality_verbose": "King William Road, Wayville, Adelaide, SA"
+          },
+          "switch_to_order_menu": 0,
+          "cuisines": "Burger, Fish and Chips",
+          "timings": "12 Noon to 9 PM (Mon-Sun)",
+          "average_cost_for_two": 30,
+          "price_range": 2,
+          "currency": "$",
+          "highlights": [
+            "Credit Card",
+            "No Alcohol Available",
+            "Dinner",
+            "Takeaway Available",
+            "Lunch",
+            "Delivery",
+            "Gluten Free Options",
+            "Table booking recommended",
+            "Vegetarian Friendly"
+          ],
+          "offers": [],
+          "opentable_support": 0,
+          "is_zomato_book_res": 0,
+          "mezzo_provider": "OTHER",
+          "is_book_form_web_view": 0,
+          "book_form_web_view_url": "",
+          "book_again_url": "",
+          "thumb": "https://b.zmtcdn.com/data/pictures/chains/1/16586931/4b803a9fbc42b803414244750b2635d8.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+          "user_rating": {
+            "aggregate_rating": "3.6",
+            "rating_text": "Good",
+            "rating_color": "9ACD32",
+            "rating_obj": {
+              "title": { "text": "3.6" },
+              "bg_color": { "type": "lime", "tint": "600" }
+            },
+            "votes": 71
+          },
+          "all_reviews_count": 30,
+          "photos_url": "https://www.zomato.com/adelaide/fish-out-of-water-hyde-park-hyde-park/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop",
+          "photo_count": 123,
+          "menu_url": "https://www.zomato.com/adelaide/fish-out-of-water-hyde-park-hyde-park/menu?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1&openSwipeBox=menu&showMinimal=1#tabtop",
+          "featured_image": "https://b.zmtcdn.com/data/pictures/chains/1/16586931/4b803a9fbc42b803414244750b2635d8.jpg?output-format=webp",
+          "has_online_delivery": 0,
+          "is_delivering_now": 0,
+          "store_type": "",
+          "include_bogo_offers": true,
+          "deeplink": "zomato://restaurant/16586931",
+          "is_table_reservation_supported": 0,
+          "has_table_booking": 0,
+          "events_url": "https://www.zomato.com/adelaide/fish-out-of-water-hyde-park-hyde-park/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "phone_numbers": "08 8272 1996",
+          "all_reviews": {
+            "reviews": [
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] }
+            ]
+          },
+          "establishment": [],
+          "establishment_types": []
+        }
+      },
+      {
+        "restaurant": {
+          "R": {
+            "has_menu_status": { "delivery": -1, "takeaway": -1 },
+            "res_id": 16589562,
+            "is_grocery_store": false
+          },
+          "apikey": "d7d72ddcee1493db536aeeb88ae2440c",
+          "id": "16589562",
+          "name": "Chicken Coop",
+          "url": "https://www.zomato.com/adelaide/chicken-coop-firle?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "location": {
+            "address": "161 Glynburn Road, Firle, Adelaide",
+            "locality": "Glynburn Road, Firle",
+            "city": "Adelaide",
+            "city_id": 297,
+            "latitude": "-34.9029749124",
+            "longitude": "138.6572285369",
+            "zipcode": "5070",
+            "country_id": 14,
+            "locality_verbose": "Glynburn Road, Firle, Adelaide, SA"
+          },
+          "switch_to_order_menu": 0,
+          "cuisines": "Burger, Fish and Chips",
+          "timings": "11 AM to 8:30 PM (Mon, Wed, Thu, Fri, Sat), Closed (Tue),11 AM to 8 PM (Sun)",
+          "average_cost_for_two": 30,
+          "price_range": 2,
+          "currency": "$",
+          "highlights": [
+            "Credit Card",
+            "Takeaway Available",
+            "No Alcohol Available",
+            "Dinner",
+            "Lunch",
+            "Indoor Seating",
+            "Vegetarian Friendly"
+          ],
+          "offers": [],
+          "opentable_support": 0,
+          "is_zomato_book_res": 0,
+          "mezzo_provider": "OTHER",
+          "is_book_form_web_view": 0,
+          "book_form_web_view_url": "",
+          "book_again_url": "",
+          "thumb": "https://b.zmtcdn.com/data/res_imagery/16589562_RESTAURANT_00b6df17be25dd0ca027036809041174.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+          "user_rating": {
+            "aggregate_rating": "3.5",
+            "rating_text": "Good",
+            "rating_color": "9ACD32",
+            "rating_obj": {
+              "title": { "text": "3.5" },
+              "bg_color": { "type": "lime", "tint": "500" }
+            },
+            "votes": 32
+          },
+          "all_reviews_count": 13,
+          "photos_url": "https://www.zomato.com/adelaide/chicken-coop-firle/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop",
+          "photo_count": 17,
+          "menu_url": "https://www.zomato.com/adelaide/chicken-coop-firle/menu?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1&openSwipeBox=menu&showMinimal=1#tabtop",
+          "featured_image": "https://b.zmtcdn.com/data/res_imagery/16589562_RESTAURANT_00b6df17be25dd0ca027036809041174.jpg?output-format=webp",
+          "has_online_delivery": 0,
+          "is_delivering_now": 0,
+          "store_type": "",
+          "include_bogo_offers": true,
+          "deeplink": "zomato://restaurant/16589562",
+          "is_table_reservation_supported": 0,
+          "has_table_booking": 0,
+          "events_url": "https://www.zomato.com/adelaide/chicken-coop-firle/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "phone_numbers": "08 8332 4353",
+          "all_reviews": {
+            "reviews": [
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] }
+            ]
+          },
+          "establishment": ["Fast Food"],
+          "establishment_types": []
+        }
+      },
+      {
+        "restaurant": {
+          "R": {
+            "has_menu_status": { "delivery": -1, "takeaway": -1 },
+            "res_id": 18146075,
+            "is_grocery_store": false
+          },
+          "apikey": "d7d72ddcee1493db536aeeb88ae2440c",
+          "id": "18146075",
+          "name": "Champion Take Away",
+          "url": "https://www.zomato.com/adelaide/champion-take-away-christies-beach?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "location": {
+            "address": "1/54 Beach Road, Christies Beach, Adelaide",
+            "locality": "Beach Road, Christies Beach",
+            "city": "Adelaide",
+            "city_id": 297,
+            "latitude": "-35.1395140000",
+            "longitude": "138.4738973000",
+            "zipcode": "",
+            "country_id": 14,
+            "locality_verbose": "Beach Road, Christies Beach, Adelaide, SA"
+          },
+          "switch_to_order_menu": 0,
+          "cuisines": "Charcoal Chicken, Fish and Chips, Greek",
+          "timings": "11 AM to 8:30 PM (Mon-Sun)",
+          "average_cost_for_two": 30,
+          "price_range": 2,
+          "currency": "$",
+          "highlights": [
+            "Credit Card",
+            "Lunch",
+            "Takeaway Available",
+            "Dinner",
+            "Wheelchair Accessible",
+            "Kid Friendly"
+          ],
+          "offers": [],
+          "opentable_support": 0,
+          "is_zomato_book_res": 0,
+          "mezzo_provider": "OTHER",
+          "is_book_form_web_view": 0,
+          "book_form_web_view_url": "",
+          "book_again_url": "",
+          "thumb": "https://b.zmtcdn.com/data/res_imagery/18146075_RESTAURANT_fc5827c23989cdacf4330a6fe441cb4b.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+          "user_rating": {
+            "aggregate_rating": "3.5",
+            "rating_text": "Good",
+            "rating_color": "9ACD32",
+            "rating_obj": {
+              "title": { "text": "3.5" },
+              "bg_color": { "type": "lime", "tint": "500" }
+            },
+            "votes": 13
+          },
+          "all_reviews_count": 9,
+          "photos_url": "https://www.zomato.com/adelaide/champion-take-away-christies-beach/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop",
+          "photo_count": 4,
+          "menu_url": "https://www.zomato.com/adelaide/champion-take-away-christies-beach/menu?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1&openSwipeBox=menu&showMinimal=1#tabtop",
+          "featured_image": "https://b.zmtcdn.com/data/res_imagery/18146075_RESTAURANT_fc5827c23989cdacf4330a6fe441cb4b.jpg",
+          "has_online_delivery": 0,
+          "is_delivering_now": 0,
+          "store_type": "",
+          "include_bogo_offers": true,
+          "deeplink": "zomato://restaurant/18146075",
+          "is_table_reservation_supported": 0,
+          "has_table_booking": 0,
+          "events_url": "https://www.zomato.com/adelaide/champion-take-away-christies-beach/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "phone_numbers": "(08) 8186 0902",
+          "all_reviews": {
+            "reviews": [
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] }
+            ]
+          },
+          "establishment": [],
+          "establishment_types": []
+        }
+      },
+      {
+        "restaurant": {
+          "R": {
+            "has_menu_status": { "delivery": -1, "takeaway": -1 },
+            "res_id": 16588128,
+            "is_grocery_store": false
+          },
+          "apikey": "d7d72ddcee1493db536aeeb88ae2440c",
+          "id": "16588128",
+          "name": "Marden Charcoal Chicken and Seafood",
+          "url": "https://www.zomato.com/adelaide/marden-charcoal-chicken-and-seafood-payneham?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "location": {
+            "address": "371a Payneham Road, Marden",
+            "locality": "Payneham",
+            "city": "Adelaide",
+            "city_id": 297,
+            "latitude": "-34.8962324354",
+            "longitude": "138.6394589022",
+            "zipcode": "5070",
+            "country_id": 14,
+            "locality_verbose": "Payneham"
+          },
+          "switch_to_order_menu": 0,
+          "cuisines": "Charcoal Chicken, Seafood, Fish and Chips, Burger",
+          "timings": "11 AM to 8:30 PM (Mon, Wed-Sun), Tue Closed",
+          "average_cost_for_two": 25,
+          "price_range": 1,
+          "currency": "$",
+          "highlights": [
+            "Credit Card",
+            "Takeaway Available",
+            "Dinner",
+            "Lunch",
+            "Indoor Seating"
+          ],
+          "offers": [],
+          "opentable_support": 0,
+          "is_zomato_book_res": 0,
+          "mezzo_provider": "OTHER",
+          "is_book_form_web_view": 0,
+          "book_form_web_view_url": "",
+          "book_again_url": "",
+          "thumb": "https://b.zmtcdn.com/data/res_imagery/16588128_RESTAURANT_27fa901bea944bc848cff91276f58c80.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+          "user_rating": {
+            "aggregate_rating": "3.6",
+            "rating_text": "Good",
+            "rating_color": "9ACD32",
+            "rating_obj": {
+              "title": { "text": "3.6" },
+              "bg_color": { "type": "lime", "tint": "600" }
+            },
+            "votes": 27
+          },
+          "all_reviews_count": 16,
+          "photos_url": "https://www.zomato.com/adelaide/marden-charcoal-chicken-and-seafood-payneham/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop",
+          "photo_count": 8,
+          "menu_url": "https://www.zomato.com/adelaide/marden-charcoal-chicken-and-seafood-payneham/menu?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1&openSwipeBox=menu&showMinimal=1#tabtop",
+          "featured_image": "https://b.zmtcdn.com/data/res_imagery/16588128_RESTAURANT_27fa901bea944bc848cff91276f58c80.jpg?output-format=webp",
+          "has_online_delivery": 0,
+          "is_delivering_now": 0,
+          "store_type": "",
+          "include_bogo_offers": true,
+          "deeplink": "zomato://restaurant/16588128",
+          "is_table_reservation_supported": 0,
+          "has_table_booking": 0,
+          "events_url": "https://www.zomato.com/adelaide/marden-charcoal-chicken-and-seafood-payneham/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "phone_numbers": "08 8362 4158",
+          "all_reviews": {
+            "reviews": [
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] }
+            ]
+          },
+          "establishment": ["Casual Dining"],
+          "establishment_types": []
+        }
+      },
+      {
+        "restaurant": {
+          "R": {
+            "has_menu_status": { "delivery": -1, "takeaway": -1 },
+            "res_id": 16587513,
+            "is_grocery_store": false
+          },
+          "apikey": "d7d72ddcee1493db536aeeb88ae2440c",
+          "id": "16587513",
+          "name": "Chicken Chef",
+          "url": "https://www.zomato.com/adelaide/chicken-chef-blair-athol?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "location": {
+            "address": "438 Main North Road, Blair Athol",
+            "locality": "Blair Athol",
+            "city": "Adelaide",
+            "city_id": 297,
+            "latitude": "-34.8586166667",
+            "longitude": "138.6006916667",
+            "zipcode": "5084",
+            "country_id": 14,
+            "locality_verbose": "Blair Athol"
+          },
+          "switch_to_order_menu": 0,
+          "cuisines": "Fast Food, Fish and Chips",
+          "timings": "10 AM to 9 PM (Mon, Tue, Wed, Sat, Sun), 10 AM to 9:30 PM (Thu-Fri)",
+          "average_cost_for_two": 25,
+          "price_range": 1,
+          "currency": "$",
+          "highlights": [
+            "Credit Card",
+            "Dinner",
+            "Takeaway Available",
+            "Lunch",
+            "Wheelchair Accessible",
+            "Vegetarian Friendly",
+            "Indoor Seating"
+          ],
+          "offers": [],
+          "opentable_support": 0,
+          "is_zomato_book_res": 0,
+          "mezzo_provider": "OTHER",
+          "is_book_form_web_view": 0,
+          "book_form_web_view_url": "",
+          "book_again_url": "",
+          "thumb": "https://b.zmtcdn.com/data/res_imagery/16587513_RESTAURANT_140c4ede8caf377e1d1653f9a92ad01e.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+          "user_rating": {
+            "aggregate_rating": "3.8",
+            "rating_text": "Good",
+            "rating_color": "9ACD32",
+            "rating_obj": {
+              "title": { "text": "3.8" },
+              "bg_color": { "type": "lime", "tint": "600" }
+            },
+            "votes": 30
+          },
+          "all_reviews_count": 11,
+          "photos_url": "https://www.zomato.com/adelaide/chicken-chef-blair-athol/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop",
+          "photo_count": 10,
+          "menu_url": "https://www.zomato.com/adelaide/chicken-chef-blair-athol/menu?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1&openSwipeBox=menu&showMinimal=1#tabtop",
+          "featured_image": "https://b.zmtcdn.com/data/res_imagery/16587513_RESTAURANT_140c4ede8caf377e1d1653f9a92ad01e.jpg",
+          "has_online_delivery": 0,
+          "is_delivering_now": 0,
+          "store_type": "",
+          "include_bogo_offers": true,
+          "deeplink": "zomato://restaurant/16587513",
+          "is_table_reservation_supported": 0,
+          "has_table_booking": 0,
+          "events_url": "https://www.zomato.com/adelaide/chicken-chef-blair-athol/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "phone_numbers": "(08) 8262 6776",
+          "all_reviews": {
+            "reviews": [
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] }
+            ]
+          },
+          "establishment": ["Fast Food"],
+          "establishment_types": []
+        }
+      },
+      {
+        "restaurant": {
+          "R": {
+            "has_menu_status": { "delivery": -1, "takeaway": -1 },
+            "res_id": 16589239,
+            "is_grocery_store": false
+          },
+          "apikey": "d7d72ddcee1493db536aeeb88ae2440c",
+          "id": "16589239",
+          "name": "Cowandilla Charcoal Chicken",
+          "url": "https://www.zomato.com/adelaide/cowandilla-charcoal-chicken-cowandilla?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "location": {
+            "address": "233 Sir Donald Bradman Drive, Cowandilla, Adelaide",
+            "locality": "Sir Donald Bradman Drive, Cowandilla",
+            "city": "Adelaide",
+            "city_id": 297,
+            "latitude": "-34.9325706407",
+            "longitude": "138.5565213114",
+            "zipcode": "5033",
+            "country_id": 14,
+            "locality_verbose": "Sir Donald Bradman Drive, Cowandilla, Adelaide, SA"
+          },
+          "switch_to_order_menu": 0,
+          "cuisines": "Charcoal Chicken, Fish and Chips",
+          "timings": "6 AM to 8:30 PM (Mon-Sun)",
+          "average_cost_for_two": 24,
+          "price_range": 1,
+          "currency": "$",
+          "highlights": [
+            "Credit Card",
+            "Takeaway Available",
+            "Lunch",
+            "Dinner",
+            "Wheelchair Accessible",
+            "Vegetarian Friendly"
+          ],
+          "offers": [],
+          "opentable_support": 0,
+          "is_zomato_book_res": 0,
+          "mezzo_provider": "OTHER",
+          "is_book_form_web_view": 0,
+          "book_form_web_view_url": "",
+          "book_again_url": "",
+          "thumb": "https://b.zmtcdn.com/data/res_imagery/16589239_RESTAURANT_7647a76e4b4087866cfee46a59ebe44d.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+          "user_rating": {
+            "aggregate_rating": "3.5",
+            "rating_text": "Good",
+            "rating_color": "9ACD32",
+            "rating_obj": {
+              "title": { "text": "3.5" },
+              "bg_color": { "type": "lime", "tint": "500" }
+            },
+            "votes": 18
+          },
+          "all_reviews_count": 7,
+          "photos_url": "https://www.zomato.com/adelaide/cowandilla-charcoal-chicken-cowandilla/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop",
+          "photo_count": 4,
+          "menu_url": "https://www.zomato.com/adelaide/cowandilla-charcoal-chicken-cowandilla/menu?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1&openSwipeBox=menu&showMinimal=1#tabtop",
+          "featured_image": "https://b.zmtcdn.com/data/res_imagery/16589239_RESTAURANT_7647a76e4b4087866cfee46a59ebe44d.jpg",
+          "has_online_delivery": 0,
+          "is_delivering_now": 0,
+          "store_type": "",
+          "include_bogo_offers": true,
+          "deeplink": "zomato://restaurant/16589239",
+          "is_table_reservation_supported": 0,
+          "has_table_booking": 0,
+          "events_url": "https://www.zomato.com/adelaide/cowandilla-charcoal-chicken-cowandilla/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "phone_numbers": "(08) 8443 5640",
+          "all_reviews": {
+            "reviews": [
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] }
+            ]
+          },
+          "establishment": [],
+          "establishment_types": []
+        }
+      },
+      {
+        "restaurant": {
+          "R": {
+            "has_menu_status": { "delivery": -1, "takeaway": -1 },
+            "res_id": 16589302,
+            "is_grocery_store": false
+          },
+          "apikey": "d7d72ddcee1493db536aeeb88ae2440c",
+          "id": "16589302",
+          "name": "Chicken Cave",
+          "url": "https://www.zomato.com/adelaide/chicken-cave-fulham-gardens?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "location": {
+            "address": "130 Valetta Road, Findon, Adelaide",
+            "locality": "Fulham Gardens",
+            "city": "Adelaide",
+            "city_id": 297,
+            "latitude": "-34.9122500000",
+            "longitude": "138.5142972222",
+            "zipcode": "5024",
+            "country_id": 14,
+            "locality_verbose": "Fulham Gardens"
+          },
+          "switch_to_order_menu": 0,
+          "cuisines": "Charcoal Chicken, Fish and Chips",
+          "timings": "10 AM to 8:30 PM (Mon, Tue, Wed, Fri, Sat, Sun), 10 AM to 9 PM (Thu)",
+          "average_cost_for_two": 30,
+          "price_range": 2,
+          "currency": "$",
+          "highlights": [
+            "Credit Card",
+            "Takeaway Available",
+            "Lunch",
+            "Dinner",
+            "Wheelchair Accessible",
+            "Vegetarian Friendly"
+          ],
+          "offers": [],
+          "opentable_support": 0,
+          "is_zomato_book_res": 0,
+          "mezzo_provider": "OTHER",
+          "is_book_form_web_view": 0,
+          "book_form_web_view_url": "",
+          "book_again_url": "",
+          "thumb": "",
+          "user_rating": {
+            "aggregate_rating": "3.7",
+            "rating_text": "Good",
+            "rating_color": "9ACD32",
+            "rating_obj": {
+              "title": { "text": "3.7" },
+              "bg_color": { "type": "lime", "tint": "600" }
+            },
+            "votes": 19
+          },
+          "all_reviews_count": 7,
+          "photos_url": "https://www.zomato.com/adelaide/chicken-cave-fulham-gardens/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop",
+          "photo_count": 2,
+          "menu_url": "https://www.zomato.com/adelaide/chicken-cave-fulham-gardens/menu?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1&openSwipeBox=menu&showMinimal=1#tabtop",
+          "featured_image": "",
+          "has_online_delivery": 0,
+          "is_delivering_now": 0,
+          "store_type": "",
+          "include_bogo_offers": true,
+          "deeplink": "zomato://restaurant/16589302",
+          "is_table_reservation_supported": 0,
+          "has_table_booking": 0,
+          "events_url": "https://www.zomato.com/adelaide/chicken-cave-fulham-gardens/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "phone_numbers": "(08) 8356 9492",
+          "all_reviews": {
+            "reviews": [
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] }
+            ]
+          },
+          "establishment": [],
+          "establishment_types": []
+        }
+      },
+      {
+        "restaurant": {
+          "R": {
+            "has_menu_status": { "delivery": -1, "takeaway": -1 },
+            "res_id": 16588792,
+            "is_grocery_store": false
+          },
+          "apikey": "d7d72ddcee1493db536aeeb88ae2440c",
+          "id": "16588792",
+          "name": "Seaview Chicken and Fish",
+          "url": "https://www.zomato.com/adelaide/seaview-chicken-and-fish-seacliff-park?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "location": {
+            "address": "238 Seacombe Road, Seacliff Park, Adelaide",
+            "locality": "Seacliff Park",
+            "city": "Adelaide",
+            "city_id": 297,
+            "latitude": "-35.0298222222",
+            "longitude": "138.5323194444",
+            "zipcode": "5049",
+            "country_id": 14,
+            "locality_verbose": "Seacliff Park"
+          },
+          "switch_to_order_menu": 0,
+          "cuisines": "Fish and Chips, Charcoal Chicken",
+          "timings": "11 AM to 8:30 PM (Mon-Sun)",
+          "average_cost_for_two": 35,
+          "price_range": 2,
+          "currency": "$",
+          "highlights": [
+            "Credit Card",
+            "Takeaway Available",
+            "Lunch",
+            "Dinner",
+            "Indoor Seating",
+            "Shisha",
+            "Halal",
+            "Outdoor Seating",
+            "Kid Friendly",
+            "Wheelchair Accessible",
+            "Gluten Free Options",
+            "Vegetarian Friendly"
+          ],
+          "offers": [],
+          "opentable_support": 0,
+          "is_zomato_book_res": 0,
+          "mezzo_provider": "OTHER",
+          "is_book_form_web_view": 0,
+          "book_form_web_view_url": "",
+          "book_again_url": "",
+          "thumb": "https://b.zmtcdn.com/data/res_imagery/16588792_RESTAURANT_347e5ca02d8a162b5e41a3729ba2fafa.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+          "user_rating": {
+            "aggregate_rating": "3.6",
+            "rating_text": "Good",
+            "rating_color": "9ACD32",
+            "rating_obj": {
+              "title": { "text": "3.6" },
+              "bg_color": { "type": "lime", "tint": "600" }
+            },
+            "votes": 17
+          },
+          "all_reviews_count": 8,
+          "photos_url": "https://www.zomato.com/adelaide/seaview-chicken-and-fish-seacliff-park/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop",
+          "photo_count": 6,
+          "menu_url": "https://www.zomato.com/adelaide/seaview-chicken-and-fish-seacliff-park/menu?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1&openSwipeBox=menu&showMinimal=1#tabtop",
+          "featured_image": "https://b.zmtcdn.com/data/res_imagery/16588792_RESTAURANT_347e5ca02d8a162b5e41a3729ba2fafa.jpg",
+          "has_online_delivery": 0,
+          "is_delivering_now": 0,
+          "store_type": "",
+          "include_bogo_offers": true,
+          "deeplink": "zomato://restaurant/16588792",
+          "is_table_reservation_supported": 0,
+          "has_table_booking": 0,
+          "events_url": "https://www.zomato.com/adelaide/seaview-chicken-and-fish-seacliff-park/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "phone_numbers": "(08) 8296 6242",
+          "all_reviews": {
+            "reviews": [
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] }
+            ]
+          },
+          "establishment": ["Casual Dining"],
+          "establishment_types": []
+        }
+      },
+      {
+        "restaurant": {
+          "R": {
+            "has_menu_status": { "delivery": -1, "takeaway": -1 },
+            "res_id": 16587413,
+            "is_grocery_store": false
+          },
+          "apikey": "d7d72ddcee1493db536aeeb88ae2440c",
+          "id": "16587413",
+          "name": "Semaphore Fish and Chips",
+          "url": "https://www.zomato.com/adelaide/semaphore-fish-and-chips-semaphore?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "location": {
+            "address": "36a Semaphore Road, Semaphore, Adelaide",
+            "locality": "Semaphore Road, Semaphore",
+            "city": "Adelaide",
+            "city_id": 297,
+            "latitude": "-34.8387980471",
+            "longitude": "138.4828125313",
+            "zipcode": "5019",
+            "country_id": 14,
+            "locality_verbose": "Semaphore Road, Semaphore, Adelaide, SA"
+          },
+          "switch_to_order_menu": 0,
+          "cuisines": "Fish and Chips",
+          "timings": "11:30 AM to 8 PM (Mon-Sun)",
+          "average_cost_for_two": 30,
+          "price_range": 2,
+          "currency": "$",
+          "highlights": [
+            "Cash",
+            "Lunch",
+            "Takeaway Available",
+            "No Alcohol Available",
+            "Dinner",
+            "Kid Friendly",
+            "Vegetarian Friendly",
+            "Outdoor Seating"
+          ],
+          "offers": [],
+          "opentable_support": 0,
+          "is_zomato_book_res": 0,
+          "mezzo_provider": "OTHER",
+          "is_book_form_web_view": 0,
+          "book_form_web_view_url": "",
+          "book_again_url": "",
+          "thumb": "https://b.zmtcdn.com/data/res_imagery/16587413_RESTAURANT_48a305794210662422d0801f9ac35e44.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+          "user_rating": {
+            "aggregate_rating": "3.1",
+            "rating_text": "Average",
+            "rating_color": "CDD614",
+            "rating_obj": {
+              "title": { "text": "3.1" },
+              "bg_color": { "type": "lime", "tint": "500" }
+            },
+            "votes": 25
+          },
+          "all_reviews_count": 15,
+          "photos_url": "https://www.zomato.com/adelaide/semaphore-fish-and-chips-semaphore/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop",
+          "photo_count": 3,
+          "menu_url": "https://www.zomato.com/adelaide/semaphore-fish-and-chips-semaphore/menu?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1&openSwipeBox=menu&showMinimal=1#tabtop",
+          "featured_image": "https://b.zmtcdn.com/data/res_imagery/16587413_RESTAURANT_48a305794210662422d0801f9ac35e44.jpg",
+          "has_online_delivery": 0,
+          "is_delivering_now": 0,
+          "store_type": "",
+          "include_bogo_offers": true,
+          "deeplink": "zomato://restaurant/16587413",
+          "is_table_reservation_supported": 0,
+          "has_table_booking": 0,
+          "events_url": "https://www.zomato.com/adelaide/semaphore-fish-and-chips-semaphore/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "phone_numbers": "(08) 8449 8277",
+          "all_reviews": {
+            "reviews": [
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] }
+            ]
+          },
+          "establishment": [],
+          "establishment_types": []
+        }
+      },
+      {
+        "restaurant": {
+          "R": {
+            "has_menu_status": { "delivery": -1, "takeaway": -1 },
+            "res_id": 16587694,
+            "is_grocery_store": false
+          },
+          "apikey": "d7d72ddcee1493db536aeeb88ae2440c",
+          "id": "16587694",
+          "name": "Fat Chicken",
+          "url": "https://www.zomato.com/adelaide/fat-chicken-torrensville?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "location": {
+            "address": "175 Henley Beach Road, Torrensville, Adelaide",
+            "locality": "Torrensville",
+            "city": "Adelaide",
+            "city_id": 297,
+            "latitude": "-34.9244416667",
+            "longitude": "138.5608527778",
+            "zipcode": "5031",
+            "country_id": 14,
+            "locality_verbose": "Torrensville"
+          },
+          "switch_to_order_menu": 0,
+          "cuisines": "Charcoal Chicken, Fish and Chips",
+          "timings": "11 AM to 8:30 PM (Mon-Sun)",
+          "average_cost_for_two": 40,
+          "price_range": 2,
+          "currency": "$",
+          "highlights": [
+            "Credit Card",
+            "Lunch",
+            "Takeaway Available",
+            "Dinner",
+            "Kid Friendly",
+            "Gluten Free Options",
+            "Outdoor Seating",
+            "Vegetarian Friendly"
+          ],
+          "offers": [],
+          "opentable_support": 0,
+          "is_zomato_book_res": 0,
+          "mezzo_provider": "OTHER",
+          "is_book_form_web_view": 0,
+          "book_form_web_view_url": "",
+          "book_again_url": "",
+          "thumb": "",
+          "user_rating": {
+            "aggregate_rating": "3.5",
+            "rating_text": "Good",
+            "rating_color": "9ACD32",
+            "rating_obj": {
+              "title": { "text": "3.5" },
+              "bg_color": { "type": "lime", "tint": "500" }
+            },
+            "votes": 26
+          },
+          "all_reviews_count": 14,
+          "photos_url": "https://www.zomato.com/adelaide/fat-chicken-torrensville/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop",
+          "photo_count": 4,
+          "menu_url": "https://www.zomato.com/adelaide/fat-chicken-torrensville/menu?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1&openSwipeBox=menu&showMinimal=1#tabtop",
+          "featured_image": "",
+          "has_online_delivery": 0,
+          "is_delivering_now": 0,
+          "store_type": "",
+          "include_bogo_offers": true,
+          "deeplink": "zomato://restaurant/16587694",
+          "is_table_reservation_supported": 0,
+          "has_table_booking": 0,
+          "events_url": "https://www.zomato.com/adelaide/fat-chicken-torrensville/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "phone_numbers": "(08) 8443 5140",
+          "all_reviews": {
+            "reviews": [
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] }
+            ]
+          },
+          "establishment": [],
+          "establishment_types": []
+        }
+      },
+      {
+        "restaurant": {
+          "R": {
+            "has_menu_status": { "delivery": -1, "takeaway": -1 },
+            "res_id": 18148277,
+            "is_grocery_store": false
+          },
+          "apikey": "d7d72ddcee1493db536aeeb88ae2440c",
+          "id": "18148277",
+          "name": "The Chicken Home",
+          "url": "https://www.zomato.com/adelaide/the-chicken-home-modbury-north?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "location": {
+            "address": "106 Kelly Road, Modbury North North",
+            "locality": "Kelly Road, Modbury North",
+            "city": "Adelaide",
+            "city_id": 297,
+            "latitude": "-34.8275305556",
+            "longitude": "138.6744222222",
+            "zipcode": "",
+            "country_id": 14,
+            "locality_verbose": "Kelly Road, Modbury North, Adelaide, SA"
+          },
+          "switch_to_order_menu": 0,
+          "cuisines": "Charcoal Chicken, Fish and Chips",
+          "timings": "11 AM to 8 PM (Mon-Sun)",
+          "average_cost_for_two": 25,
+          "price_range": 1,
+          "currency": "$",
+          "highlights": [
+            "Takeaway Available",
+            "Dinner",
+            "Lunch",
+            "Wheelchair Accessible"
+          ],
+          "offers": [],
+          "opentable_support": 0,
+          "is_zomato_book_res": 0,
+          "mezzo_provider": "OTHER",
+          "is_book_form_web_view": 0,
+          "book_form_web_view_url": "",
+          "book_again_url": "",
+          "thumb": "",
+          "user_rating": {
+            "aggregate_rating": "3.6",
+            "rating_text": "Good",
+            "rating_color": "9ACD32",
+            "rating_obj": {
+              "title": { "text": "3.6" },
+              "bg_color": { "type": "lime", "tint": "600" }
+            },
+            "votes": 9
+          },
+          "all_reviews_count": 4,
+          "photos_url": "https://www.zomato.com/adelaide/the-chicken-home-modbury-north/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop",
+          "photo_count": 2,
+          "menu_url": "https://www.zomato.com/adelaide/the-chicken-home-modbury-north/menu?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1&openSwipeBox=menu&showMinimal=1#tabtop",
+          "featured_image": "",
+          "has_online_delivery": 0,
+          "is_delivering_now": 0,
+          "store_type": "",
+          "include_bogo_offers": true,
+          "deeplink": "zomato://restaurant/18148277",
+          "is_table_reservation_supported": 0,
+          "has_table_booking": 0,
+          "events_url": "https://www.zomato.com/adelaide/the-chicken-home-modbury-north/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "phone_numbers": "(08) 8264 6600",
+          "all_reviews": {
+            "reviews": [
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] }
+            ]
+          },
+          "establishment": [],
+          "establishment_types": []
+        }
+      },
+      {
+        "restaurant": {
+          "R": {
+            "has_menu_status": { "delivery": -1, "takeaway": -1 },
+            "res_id": 18311086,
+            "is_grocery_store": false
+          },
+          "apikey": "d7d72ddcee1493db536aeeb88ae2440c",
+          "id": "18311086",
+          "name": "Charcoal Pit",
+          "url": "https://www.zomato.com/adelaide/charcoal-pit-findon?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "location": {
+            "address": "Findon Shopping Centre, 303 Grange Road, Findon, Adelaide",
+            "locality": "Grange Road, Findon",
+            "city": "Adelaide",
+            "city_id": 297,
+            "latitude": "-34.9051960689",
+            "longitude": "138.5311878473",
+            "zipcode": "",
+            "country_id": 14,
+            "locality_verbose": "Grange Road, Findon, Adelaide, SA"
+          },
+          "switch_to_order_menu": 0,
+          "cuisines": "Charcoal Chicken, Fish and Chips",
+          "timings": "10:30 AM to 8:30 PM (Mon-Sat),11 AM to 7:30 PM (Sun)",
+          "average_cost_for_two": 250,
+          "price_range": 4,
+          "currency": "$",
+          "highlights": [
+            "Dinner",
+            "Lunch",
+            "Credit Card",
+            "Takeaway Available",
+            "Vegetarian Friendly"
+          ],
+          "offers": [],
+          "opentable_support": 0,
+          "is_zomato_book_res": 0,
+          "mezzo_provider": "OTHER",
+          "is_book_form_web_view": 0,
+          "book_form_web_view_url": "",
+          "book_again_url": "",
+          "thumb": "",
+          "user_rating": {
+            "aggregate_rating": "3.7",
+            "rating_text": "Good",
+            "rating_color": "9ACD32",
+            "rating_obj": {
+              "title": { "text": "3.7" },
+              "bg_color": { "type": "lime", "tint": "600" }
+            },
+            "votes": 9
+          },
+          "all_reviews_count": 5,
+          "photos_url": "https://www.zomato.com/adelaide/charcoal-pit-findon/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop",
+          "photo_count": 4,
+          "menu_url": "https://www.zomato.com/adelaide/charcoal-pit-findon/menu?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1&openSwipeBox=menu&showMinimal=1#tabtop",
+          "featured_image": "",
+          "has_online_delivery": 0,
+          "is_delivering_now": 0,
+          "store_type": "",
+          "include_bogo_offers": true,
+          "deeplink": "zomato://restaurant/18311086",
+          "is_table_reservation_supported": 0,
+          "has_table_booking": 0,
+          "events_url": "https://www.zomato.com/adelaide/charcoal-pit-findon/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "phone_numbers": "08 8355 4355",
+          "all_reviews": {
+            "reviews": [
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] }
+            ]
+          },
+          "establishment": [],
+          "establishment_types": []
+        }
+      },
+      {
+        "restaurant": {
+          "R": {
+            "has_menu_status": { "delivery": -1, "takeaway": -1 },
+            "res_id": 16588745,
+            "is_grocery_store": false
+          },
+          "apikey": "d7d72ddcee1493db536aeeb88ae2440c",
+          "id": "16588745",
+          "name": "Chicken Chef",
+          "url": "https://www.zomato.com/adelaide/chicken-chef-gilles-plains?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "location": {
+            "address": "509 North East Road, Gilles Plains, Windsor Gardens, Adelaide",
+            "locality": "North East Road, Gilles Plains",
+            "city": "Adelaide",
+            "city_id": 297,
+            "latitude": "-34.8579111111",
+            "longitude": "138.6543583333",
+            "zipcode": "5087",
+            "country_id": 14,
+            "locality_verbose": "North East Road, Gilles Plains, Adelaide, SA"
+          },
+          "switch_to_order_menu": 0,
+          "cuisines": "Fast Food, Fish and Chips",
+          "timings": "11 AM to 9 PM (Mon-Sun)",
+          "average_cost_for_two": 25,
+          "price_range": 1,
+          "currency": "$",
+          "highlights": [
+            "Dinner",
+            "Takeaway Available",
+            "Credit Card",
+            "Lunch",
+            "Indoor Seating",
+            "Wheelchair Accessible",
+            "Vegetarian Friendly"
+          ],
+          "offers": [],
+          "opentable_support": 0,
+          "is_zomato_book_res": 0,
+          "mezzo_provider": "OTHER",
+          "is_book_form_web_view": 0,
+          "book_form_web_view_url": "",
+          "book_again_url": "",
+          "thumb": "https://b.zmtcdn.com/data/res_imagery/16588745_RESTAURANT_04fff19db8d5b289c8c89abde4b4d449.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+          "user_rating": {
+            "aggregate_rating": "3.7",
+            "rating_text": "Good",
+            "rating_color": "9ACD32",
+            "rating_obj": {
+              "title": { "text": "3.7" },
+              "bg_color": { "type": "lime", "tint": "600" }
+            },
+            "votes": 13
+          },
+          "all_reviews_count": 8,
+          "photos_url": "https://www.zomato.com/adelaide/chicken-chef-gilles-plains/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop",
+          "photo_count": 8,
+          "menu_url": "https://www.zomato.com/adelaide/chicken-chef-gilles-plains/menu?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1&openSwipeBox=menu&showMinimal=1#tabtop",
+          "featured_image": "https://b.zmtcdn.com/data/res_imagery/16588745_RESTAURANT_04fff19db8d5b289c8c89abde4b4d449.jpg",
+          "has_online_delivery": 0,
+          "is_delivering_now": 0,
+          "store_type": "",
+          "include_bogo_offers": true,
+          "deeplink": "zomato://restaurant/16588745",
+          "is_table_reservation_supported": 0,
+          "has_table_booking": 0,
+          "events_url": "https://www.zomato.com/adelaide/chicken-chef-gilles-plains/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "phone_numbers": "(08) 8261 6670",
+          "all_reviews": {
+            "reviews": [
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] }
+            ]
+          },
+          "establishment": ["Fast Food"],
+          "establishment_types": []
+        }
+      },
+      {
+        "restaurant": {
+          "R": {
+            "has_menu_status": { "delivery": -1, "takeaway": -1 },
+            "res_id": 16588740,
+            "is_grocery_store": false
+          },
+          "apikey": "d7d72ddcee1493db536aeeb88ae2440c",
+          "id": "16588740",
+          "name": "Fulham Fish & Chicken Cafe",
+          "url": "https://www.zomato.com/adelaide/fulham-fish-chicken-cafe-fulham-gardens?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "location": {
+            "address": "522 Grange Road, Fulham Gardens",
+            "locality": "Grange Road, Fulham Gardens",
+            "city": "Adelaide",
+            "city_id": 297,
+            "latitude": "-34.9068914000",
+            "longitude": "138.5066860000",
+            "zipcode": "5024",
+            "country_id": 14,
+            "locality_verbose": "Grange Road, Fulham Gardens, Adelaide, SA"
+          },
+          "switch_to_order_menu": 0,
+          "cuisines": "Charcoal Chicken, Fish and Chips",
+          "timings": "Closed (Mon),11 AM to 8 PM (Tue-Sun)",
+          "average_cost_for_two": 15,
+          "price_range": 1,
+          "currency": "$",
+          "highlights": [
+            "Cash",
+            "Debit Card",
+            "Takeaway Available",
+            "Lunch",
+            "Credit Card",
+            "No Alcohol Available",
+            "Dinner",
+            "Outdoor Seating"
+          ],
+          "offers": [],
+          "opentable_support": 0,
+          "is_zomato_book_res": 0,
+          "mezzo_provider": "OTHER",
+          "is_book_form_web_view": 0,
+          "book_form_web_view_url": "",
+          "book_again_url": "",
+          "thumb": "https://b.zmtcdn.com/data/res_imagery/16588740_RESTAURANT_d9a7c51ca8498bcbe5cff77f709e92bf.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+          "user_rating": {
+            "aggregate_rating": "3.4",
+            "rating_text": "Average",
+            "rating_color": "CDD614",
+            "rating_obj": {
+              "title": { "text": "3.4" },
+              "bg_color": { "type": "lime", "tint": "500" }
+            },
+            "votes": 17
+          },
+          "all_reviews_count": 7,
+          "photos_url": "https://www.zomato.com/adelaide/fulham-fish-chicken-cafe-fulham-gardens/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop",
+          "photo_count": 4,
+          "menu_url": "https://www.zomato.com/adelaide/fulham-fish-chicken-cafe-fulham-gardens/menu?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1&openSwipeBox=menu&showMinimal=1#tabtop",
+          "featured_image": "https://b.zmtcdn.com/data/res_imagery/16588740_RESTAURANT_d9a7c51ca8498bcbe5cff77f709e92bf.jpg",
+          "has_online_delivery": 0,
+          "is_delivering_now": 0,
+          "store_type": "",
+          "include_bogo_offers": true,
+          "deeplink": "zomato://restaurant/16588740",
+          "is_table_reservation_supported": 0,
+          "has_table_booking": 0,
+          "events_url": "https://www.zomato.com/adelaide/fulham-fish-chicken-cafe-fulham-gardens/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "phone_numbers": "(08) 8235 1486",
+          "all_reviews": {
+            "reviews": [
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] }
+            ]
+          },
+          "establishment": [],
+          "establishment_types": []
+        }
+      },
+      {
+        "restaurant": {
+          "R": {
+            "has_menu_status": { "delivery": -1, "takeaway": -1 },
+            "res_id": 18675795,
+            "is_grocery_store": false
+          },
+          "apikey": "d7d72ddcee1493db536aeeb88ae2440c",
+          "id": "18675795",
+          "name": "CBF Chickens Burgers Fish Takeaway",
+          "url": "https://www.zomato.com/adelaide/cbf-chickens-burgers-fish-takeaway-brompton?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "location": {
+            "address": "85 Torren Road, Brompton, Adelaide",
+            "locality": "Brompton",
+            "city": "Adelaide",
+            "city_id": 297,
+            "latitude": "-34.8950395051",
+            "longitude": "138.5807280363",
+            "zipcode": "",
+            "country_id": 14,
+            "locality_verbose": "Brompton"
+          },
+          "switch_to_order_menu": 0,
+          "cuisines": "Burger, Fish and Chips, Greek",
+          "timings": "11 AM to 8:30 PM (Mon, Wed-Sun), Tue Closed",
+          "average_cost_for_two": 40,
+          "price_range": 2,
+          "currency": "$",
+          "highlights": [
+            "Breakfast",
+            "Dinner",
+            "Credit Card",
+            "No Alcohol Available",
+            "Lunch",
+            "Cash",
+            "Debit Card",
+            "Takeaway Available",
+            "Catering Available",
+            "Wheelchair Accessible",
+            "Indoor Seating",
+            "Kid Friendly",
+            "Outdoor Seating"
+          ],
+          "offers": [],
+          "opentable_support": 0,
+          "is_zomato_book_res": 0,
+          "mezzo_provider": "OTHER",
+          "is_book_form_web_view": 0,
+          "book_form_web_view_url": "",
+          "book_again_url": "",
+          "thumb": "",
+          "user_rating": {
+            "aggregate_rating": "3.6",
+            "rating_text": "Good",
+            "rating_color": "9ACD32",
+            "rating_obj": {
+              "title": { "text": "3.6" },
+              "bg_color": { "type": "lime", "tint": "600" }
+            },
+            "votes": 12
+          },
+          "all_reviews_count": 5,
+          "photos_url": "https://www.zomato.com/adelaide/cbf-chickens-burgers-fish-takeaway-brompton/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop",
+          "photo_count": 8,
+          "menu_url": "https://www.zomato.com/adelaide/cbf-chickens-burgers-fish-takeaway-brompton/menu?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1&openSwipeBox=menu&showMinimal=1#tabtop",
+          "featured_image": "",
+          "has_online_delivery": 0,
+          "is_delivering_now": 0,
+          "store_type": "",
+          "include_bogo_offers": true,
+          "deeplink": "zomato://restaurant/18675795",
+          "is_table_reservation_supported": 0,
+          "has_table_booking": 0,
+          "events_url": "https://www.zomato.com/adelaide/cbf-chickens-burgers-fish-takeaway-brompton/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "phone_numbers": "08 8340 0080",
+          "all_reviews": {
+            "reviews": [
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] }
+            ]
+          },
+          "establishment": ["Casual Dining"],
+          "establishment_types": []
+        }
+      },
+      {
+        "restaurant": {
+          "R": {
+            "has_menu_status": { "delivery": -1, "takeaway": -1 },
+            "res_id": 16588254,
+            "is_grocery_store": false
+          },
+          "apikey": "d7d72ddcee1493db536aeeb88ae2440c",
+          "id": "16588254",
+          "name": "Dolphin Fish Shop and Take Away",
+          "url": "https://www.zomato.com/adelaide/dolphin-fish-shop-and-take-away-netley?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "location": {
+            "address": "284b Marion Road, Netley, Adelaide",
+            "locality": "Marion Road, Netley",
+            "city": "Adelaide",
+            "city_id": 297,
+            "latitude": "-34.9504233146",
+            "longitude": "138.5537016392",
+            "zipcode": "5037",
+            "country_id": 14,
+            "locality_verbose": "Marion Road, Netley, Adelaide, SA"
+          },
+          "switch_to_order_menu": 0,
+          "cuisines": "Burger, Seafood, Fish and Chips",
+          "timings": "Closed (Mon),11 AM to 8:30 PM (Tue-Fri),11:30 AM to 8:30 PM (Sat-Sun)",
+          "average_cost_for_two": 35,
+          "price_range": 2,
+          "currency": "$",
+          "highlights": [
+            "Credit Card",
+            "Takeaway Available",
+            "Lunch",
+            "Dinner",
+            "Indoor Seating",
+            "Vegetarian Friendly"
+          ],
+          "offers": [],
+          "opentable_support": 0,
+          "is_zomato_book_res": 0,
+          "mezzo_provider": "OTHER",
+          "is_book_form_web_view": 0,
+          "book_form_web_view_url": "",
+          "book_again_url": "",
+          "thumb": "https://b.zmtcdn.com/data/res_imagery/16588254_RESTAURANT_271f64a69b268e1f45cc329f66d8d019.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+          "user_rating": {
+            "aggregate_rating": "3.1",
+            "rating_text": "Average",
+            "rating_color": "CDD614",
+            "rating_obj": {
+              "title": { "text": "3.1" },
+              "bg_color": { "type": "lime", "tint": "500" }
+            },
+            "votes": 18
+          },
+          "all_reviews_count": 8,
+          "photos_url": "https://www.zomato.com/adelaide/dolphin-fish-shop-and-take-away-netley/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop",
+          "photo_count": 5,
+          "menu_url": "https://www.zomato.com/adelaide/dolphin-fish-shop-and-take-away-netley/menu?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1&openSwipeBox=menu&showMinimal=1#tabtop",
+          "featured_image": "https://b.zmtcdn.com/data/res_imagery/16588254_RESTAURANT_271f64a69b268e1f45cc329f66d8d019.jpg",
+          "has_online_delivery": 0,
+          "is_delivering_now": 0,
+          "store_type": "",
+          "include_bogo_offers": true,
+          "deeplink": "zomato://restaurant/16588254",
+          "is_table_reservation_supported": 0,
+          "has_table_booking": 0,
+          "events_url": "https://www.zomato.com/adelaide/dolphin-fish-shop-and-take-away-netley/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "phone_numbers": "(08) 8297 2194",
+          "all_reviews": {
+            "reviews": [
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] }
+            ]
+          },
+          "establishment": [],
+          "establishment_types": []
+        }
+      },
+      {
+        "restaurant": {
+          "R": {
+            "has_menu_status": { "delivery": -1, "takeaway": -1 },
+            "res_id": 16587907,
+            "is_grocery_store": false
+          },
+          "apikey": "d7d72ddcee1493db536aeeb88ae2440c",
+          "id": "16587907",
+          "name": "Barnacle Bill",
+          "url": "https://www.zomato.com/adelaide/barnacle-bill-golden-grove?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "location": {
+            "address": "Golden Grove Village Shopping Centre, Golden Grove, Adelaide",
+            "locality": "The Golden Way, Golden Grove",
+            "city": "Adelaide",
+            "city_id": 297,
+            "latitude": "-34.7899347000",
+            "longitude": "138.6933943000",
+            "zipcode": "5125",
+            "country_id": 14,
+            "locality_verbose": "The Golden Way, Golden Grove, Adelaide, SA"
+          },
+          "switch_to_order_menu": 0,
+          "cuisines": "Fish and Chips, Seafood",
+          "timings": "11 AM to 9 PM (Mon-Sun)",
+          "average_cost_for_two": 27,
+          "price_range": 2,
+          "currency": "$",
+          "highlights": [
+            "Credit Card",
+            "Lunch",
+            "Takeaway Available",
+            "Dinner",
+            "Kid Friendly",
+            "Gluten Free Options",
+            "Indoor Seating",
+            "Vegetarian Friendly"
+          ],
+          "offers": [],
+          "opentable_support": 0,
+          "is_zomato_book_res": 0,
+          "mezzo_provider": "OTHER",
+          "is_book_form_web_view": 0,
+          "book_form_web_view_url": "",
+          "book_again_url": "",
+          "thumb": "",
+          "user_rating": {
+            "aggregate_rating": "3.8",
+            "rating_text": "Good",
+            "rating_color": "9ACD32",
+            "rating_obj": {
+              "title": { "text": "3.8" },
+              "bg_color": { "type": "lime", "tint": "600" }
+            },
+            "votes": 9
+          },
+          "all_reviews_count": 2,
+          "photos_url": "https://www.zomato.com/adelaide/barnacle-bill-golden-grove/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop",
+          "photo_count": 2,
+          "menu_url": "https://www.zomato.com/adelaide/barnacle-bill-golden-grove/menu?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1&openSwipeBox=menu&showMinimal=1#tabtop",
+          "featured_image": "",
+          "has_online_delivery": 0,
+          "is_delivering_now": 0,
+          "store_type": "",
+          "include_bogo_offers": true,
+          "deeplink": "zomato://restaurant/16587907",
+          "is_table_reservation_supported": 0,
+          "has_table_booking": 0,
+          "events_url": "https://www.zomato.com/adelaide/barnacle-bill-golden-grove/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "phone_numbers": "(08) 8251 1902",
+          "all_reviews": { "reviews": [{ "review": [] }, { "review": [] }] },
+          "establishment": ["Casual Dining"],
+          "establishment_types": []
+        }
+      },
+      {
+        "restaurant": {
+          "R": {
+            "has_menu_status": { "delivery": -1, "takeaway": -1 },
+            "res_id": 16589738,
+            "is_grocery_store": false
+          },
+          "apikey": "d7d72ddcee1493db536aeeb88ae2440c",
+          "id": "16589738",
+          "name": "Tea Tree Gully Chicken and Seafood",
+          "url": "https://www.zomato.com/adelaide/tea-tree-gully-chicken-and-seafood-tea-tree-gully?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "location": {
+            "address": "1329 North East Road, Tea Tree Gully, Adelaide",
+            "locality": "North East Road, Tea Tree Gully",
+            "city": "Adelaide",
+            "city_id": 297,
+            "latitude": "-34.8204780000",
+            "longitude": "138.7250040000",
+            "zipcode": "5091",
+            "country_id": 14,
+            "locality_verbose": "North East Road, Tea Tree Gully, Adelaide, SA"
+          },
+          "switch_to_order_menu": 0,
+          "cuisines": "Charcoal Chicken, Fish and Chips",
+          "timings": "11 AM to 8 PM (Mon-Sun)",
+          "average_cost_for_two": 30,
+          "price_range": 2,
+          "currency": "$",
+          "highlights": [
+            "Credit Card",
+            "Takeaway Available",
+            "Dinner",
+            "Lunch",
+            "Vegetarian Friendly",
+            "Indoor Seating",
+            "Gluten Free Options"
+          ],
+          "offers": [],
+          "opentable_support": 0,
+          "is_zomato_book_res": 0,
+          "mezzo_provider": "OTHER",
+          "is_book_form_web_view": 0,
+          "book_form_web_view_url": "",
+          "book_again_url": "",
+          "thumb": "",
+          "user_rating": {
+            "aggregate_rating": "3.2",
+            "rating_text": "Average",
+            "rating_color": "CDD614",
+            "rating_obj": {
+              "title": { "text": "3.2" },
+              "bg_color": { "type": "lime", "tint": "500" }
+            },
+            "votes": 8
+          },
+          "all_reviews_count": 5,
+          "photos_url": "https://www.zomato.com/adelaide/tea-tree-gully-chicken-and-seafood-tea-tree-gully/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop",
+          "photo_count": 22,
+          "menu_url": "https://www.zomato.com/adelaide/tea-tree-gully-chicken-and-seafood-tea-tree-gully/menu?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1&openSwipeBox=menu&showMinimal=1#tabtop",
+          "featured_image": "",
+          "has_online_delivery": 0,
+          "is_delivering_now": 0,
+          "store_type": "",
+          "include_bogo_offers": true,
+          "deeplink": "zomato://restaurant/16589738",
+          "is_table_reservation_supported": 0,
+          "has_table_booking": 0,
+          "events_url": "https://www.zomato.com/adelaide/tea-tree-gully-chicken-and-seafood-tea-tree-gully/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+          "phone_numbers": "(08) 8264 2104",
+          "all_reviews": {
+            "reviews": [
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] },
+              { "review": [] }
+            ]
+          },
+          "establishment": ["Casual Dining"],
+          "establishment_types": []
+        }
+      }
+    ]
+  }
+}
