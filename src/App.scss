@@ -119,3 +119,19 @@
   display: flex;
   flex-basis: 100%;
 }
+
+.error {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+
+  .closebtn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+  }
+}

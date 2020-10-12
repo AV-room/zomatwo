@@ -10,14 +10,14 @@ interface CheckboxGroupProps {
 }
 
 const CheckboxGroup: React.FC<CheckboxGroupProps> = (props) => {
-  const [checkedVals, setCheckedVals] = useState([]);
+  // just reading that this is an anti-pattern
+  // const [checkedVals, setCheckedVals] = useState(props.checkedVals || []);
 
   const onCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newCheckedVals = event.target.checked
-      ? [...checkedVals, event.target.name]
-      : checkedVals.filter((c: any) => c !== event.target.name);
+      ? [...props.checkedVals, event.target.name]
+      : props.checkedVals.filter((c: any) => c !== event.target.name);
 
-    setCheckedVals(newCheckedVals);
     props.onChange(newCheckedVals);
   };
 
@@ -31,7 +31,7 @@ const CheckboxGroup: React.FC<CheckboxGroupProps> = (props) => {
               type="checkbox"
               key={i}
               name={lv.value}
-              checked={checkedVals.includes(lv.value)}
+              checked={props.checkedVals.includes(lv.value)}
               onChange={onCheckboxChange}
             ></input>
             {lv.label}

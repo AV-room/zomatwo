@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
+import { isEqual } from 'lodash';
 import './App.scss';
 import Restaurant from './interfaces/Restaurant';
 import { Categories, Cuisines } from './enums';
@@ -10,11 +11,14 @@ import { Filters } from './interfaces/Filters';
 import ScrollableList from './components/ScrollableList';
 import Details from './components/Details';
 import CheckboxGroup from './components/Checkbox';
-// import { Sort, SortType, SortOrder } from './interfaces/Sort';
+import { faTimes, faCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { DEFAULT_COST_BOUNDS, DEFAULT_RATING_BOUNDS } from './utils/constants';
 
 const App = () => {
   const [openFilterPanel, setOpenFilterPanel] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [hasErrored, setHasErrored] = useState<boolean>(false);
   const [results, setResults] = useState<Restaurant[]>(null);
   const [resultsTotal, setResultsTotal] = useState<number>(0);
   const [categories, setCategories] = useState<Categories[]>([]);
@@ -23,8 +27,6 @@ const App = () => {
   const [rating, setRating] = useState<number[]>([0, 5]);
   const [cost, setCost] = useState<number[]>([0, 500]);
   const [selected, setSelected] = useState<number>(null);
-  // const [sortType, setSortType] = useState<string>('cost');
-  // const [sortOrder, setSortOrder] = useState<string>('desc');
 
   useEffect(() => {
     setIsLoading(true);
@@ -35,6 +37,7 @@ const App = () => {
         (dataItem: { cuisine: { cuisine_id: number } }) =>
           dataItem.cuisine.cuisine_id
       );
+      // TODO: catch error
 
       setOtherCuisineIds(
         allCuisineIds.filter(
@@ -60,42 +63,28 @@ const App = () => {
     const filters: Filters = {
       categories,
       cuisines,
-      cost
+      cost,
+      rating
     };
 
-    // const sorting: Sort = {
-    //   type: sortType as SortType,
-    //   order: sortOrder as SortOrder
-    // };
+    getFilteredResults(filters, otherCuisineIds).then(
+      (filteredRestaurants: Restaurant[]) => {
+        setIsLoading(false);
 
-    getFilteredResults(
-      filters,
-      // sorting,
-      otherCuisineIds
-    ).then((filteredRestaurants: Restaurant[]) => {
-      setResults(filteredRestaurants);
-      setResultsTotal(filteredRestaurants.length);
-      setIsLoading(false);
-    });
-  }, [
-    categories,
-    cuisines,
-    cost,
-    rating
-    // sortType,
-    // sortOrder
-  ]);
+        if (filteredRestaurants) {
+          setResults(filteredRestaurants);
+          setResultsTotal(filteredRestaurants.length);
+        } else {
+          setHasErrored(true);
+          setResults(null);
+          setResultsTotal(null);
+        }
+      }
+    );
+  }, [categories, cuisines, cost, rating]);
 
   const ratingValueText = (value: any) => value;
   const costValueText = (value: any) => `$${value}`;
-
-  // const toggleSortOrder = (event: any) => {
-  //   setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
-  // };
-
-  // const toggleSortType = (event: any) => {
-  //   setSortType(sortType === 'cost' ? 'rating' : 'cost');
-  // };
 
   const categoryCheckboxes = [
     { label: 'Dining', value: Categories.dining },
@@ -120,6 +109,28 @@ const App = () => {
     { label: 'Other', value: Cuisines.other }
   ];
 
+  const ratingMarks = [
+    {
+      value: DEFAULT_RATING_BOUNDS[0],
+      label: '0'
+    },
+    {
+      value: DEFAULT_RATING_BOUNDS[1],
+      label: '5'
+    }
+  ];
+
+  const costMarks = [
+    {
+      value: DEFAULT_COST_BOUNDS[0],
+      label: '$'
+    },
+    {
+      value: DEFAULT_COST_BOUNDS[1],
+      label: '$$$$'
+    }
+  ];
+
   const handleCategoriesChange = (categories: Categories[]) => {
     setCategories(categories);
   };
@@ -128,17 +139,11 @@ const App = () => {
     setCuisines(cuisines);
   };
 
-  const handleRatingChange = (
-    event: React.ChangeEvent<HTMLInputElement>,
-    newValue: any
-  ) => {
+  const handleRatingChange = (event: any, newValue: any) => {
     setRating(newValue);
   };
 
-  const handleCostChange = (
-    event: React.ChangeEvent<HTMLInputElement>,
-    newValue: any
-  ) => {
+  const handleCostChange = (event: any, newValue: any) => {
     setCost(newValue);
   };
 
@@ -146,34 +151,49 @@ const App = () => {
     setSelected(restaurantId);
   };
 
-  const handleFilterClick = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFilterClick = (event: any) => {
     setOpenFilterPanel(!openFilterPanel);
   };
 
-  const ratingMarks = [
-    {
-      value: 0,
-      label: '0'
-    },
-    {
-      value: 5,
-      label: '5'
-    }
-  ];
+  const handleErrorDismissal = (event: any) => {
+    setHasErrored(false);
+    setResults(null);
+    setResultsTotal(null);
+    resetFilters();
+  };
 
-  const costMarks = [
-    {
-      value: 0,
-      label: '$'
-    },
-    {
-      value: 500,
-      label: '$$$$'
+  // reset without triggering changes to state, which will trigger further API calls
+  const resetFilters = () => {
+    if (categories.length > 0) {
+      setCategories([]);
     }
-  ];
+
+    if (cuisines.length > 0) {
+      setCuisines([]);
+    }
+
+    if (!isEqual(cost, DEFAULT_COST_BOUNDS)) {
+      setCost(DEFAULT_COST_BOUNDS);
+    }
+
+    if (!isEqual(rating, DEFAULT_RATING_BOUNDS)) {
+      setRating(DEFAULT_RATING_BOUNDS);
+    }
+  };
 
   return (
     <div className="container">
+      {hasErrored && (
+        <h2 className="error">
+          There has been an error.
+          <button className="closebtn" onClick={handleErrorDismissal}>
+            <span className="fa-layers fa-fw">
+              <FontAwesomeIcon icon={faCircle} size="lg" color="#f44336" />
+              <FontAwesomeIcon icon={faTimes} size="lg" color="white" />
+            </span>
+          </button>
+        </h2>
+      )}
       <button className="show-filters" onClick={handleFilterClick}>
         Filter
       </button>
@@ -183,12 +203,14 @@ const App = () => {
             name="category"
             label="Category"
             childLabelValues={categoryCheckboxes}
+            checkedVals={categories}
             onChange={handleCategoriesChange}
           />
           <CheckboxGroup
             name="cuisine"
             label="Cuisine"
             childLabelValues={cuisineCheckboxes}
+            checkedVals={cuisines}
             onChange={handleCuisinesChange}
           />
         </div>

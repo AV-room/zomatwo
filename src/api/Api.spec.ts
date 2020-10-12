@@ -24,11 +24,6 @@ describe('createSearchQueryParamSets()', () => {
     restaurants = [...mockRestaurantsSet];
   });
 
-  // should return an array with a default cost sort when the filter set has null cost and rating filters
-  // should return an array with a cost sort when the filter set has a non-null cost filter
-  // should return an array with a rating sort when the filter set has a non-null rating filter
-  // should return an array with a cost sort and a rating sort when the filter set has both non-null cost and rating filters
-  // should return an array with a
   it('should return an array of 1 search param set with default cost sort when the filter set has null cost and rating filters', () => {
     const filters: Filters = {
       categories: [Categories.takeaway],

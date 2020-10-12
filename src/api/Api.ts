@@ -9,6 +9,7 @@ import { SearchParams } from '../interfaces/SearchParams';
 import Restaurant from '../interfaces/Restaurant';
 import { withinRange } from '../utils/helpers';
 import { searchResponseCollection } from '../mockData/mockData';
+import { DEFAULT_COST_BOUNDS, DEFAULT_RATING_BOUNDS } from '../utils/constants';
 
 export const SEARCH_API_MAX_RESULTS = 100;
 const ENTITY_TYPE = 'city';
@@ -38,11 +39,6 @@ export const getFilteredResults = async (
   filters: Filters,
   otherCuisineIds: number[]
 ): Promise<Restaurant[]> => {
-  debugger;
-
-  const DEFAULT_COST_BOUNDS = [0, 500];
-  const DEFAULT_RATING_BOUNDS = [0, 5];
-
   if (isEqual(filters.cost, DEFAULT_COST_BOUNDS)) {
     filters.cost = null;
   }
@@ -58,8 +54,15 @@ export const getFilteredResults = async (
     otherCuisineIds
   );
 
-  const searchResponses = await collectSearchResponses(paramSets);
-  // const searchResponses = searchResponseCollection;
+  let searchResponses: SearchResponse[];
+  try {
+    // MOCK DATA
+    // searchResponses = searchResponseCollection;
+
+    searchResponses = await collectSearchResponses(paramSets);
+  } catch (rejected) {
+    return null;
+  }
 
   let allRestaurants = searchResponses.reduce((acc, curr: SearchResponse) => {
     const restaurants = curr.data.restaurants.map(
@@ -71,8 +74,6 @@ export const getFilteredResults = async (
   if (filters.cost || filters.rating) {
     allRestaurants = applySecondaryFilters(filters, allRestaurants);
   }
-
-  // sort
 
   return allRestaurants;
 };
@@ -193,7 +194,11 @@ const collectSearchResponses = async (
     } while (startIndex < Math.min(totalResults, SEARCH_API_MAX_RESULTS));
   }
 
-  return await Promise.all(promises);
+  const timeoutPromise: Promise<any> = new Promise((resolve, reject) =>
+    setTimeout(() => reject(), 20000)
+  );
+
+  return await Promise.race([Promise.all(promises), timeoutPromise]);
 };
 
 const querySearchApi = async (
