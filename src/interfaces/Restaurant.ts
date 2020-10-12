@@ -8,11 +8,11 @@ export default interface Restaurant {
   cuisines: string;
   phone_numbers: string;
   timings: string;
-  is_table_reservation_supported: number; //?
-  has_table_booking: number; //?
-  has_online_delivery: number; //?
-  thumb: string; //?
-  featured_image: string; //?,
+  is_table_reservation_supported: number;
+  has_table_booking: number;
+  has_online_delivery: number;
+  thumb: string;
+  featured_image: string;
   highlights: string[];
   average_cost_for_two: number;
   price_range: number;

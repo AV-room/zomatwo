@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './styles.scss';
 
 interface CheckboxGroupProps {
@@ -10,7 +10,7 @@ interface CheckboxGroupProps {
 }
 
 const CheckboxGroup: React.FC<CheckboxGroupProps> = (props) => {
-  // just reading that this is an anti-pattern
+  // just read that this is an anti-pattern
   // const [checkedVals, setCheckedVals] = useState(props.checkedVals || []);
 
   const onCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,7 +26,7 @@ const CheckboxGroup: React.FC<CheckboxGroupProps> = (props) => {
       <legend>{props.label}</legend>
       <div className="input-container">
         {props.childLabelValues.map((lv, i) => (
-          <label>
+          <label key={i}>
             <input
               type="checkbox"
               key={i}
