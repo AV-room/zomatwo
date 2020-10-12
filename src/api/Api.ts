@@ -14,7 +14,7 @@ export const SEARCH_API_MAX_RESULTS = 100;
 const ENTITY_TYPE = 'city';
 const ENTITY_ID = 297; // Adelaide
 const baseUrl = 'https://developers.zomato.com/api/v2.1';
-const userKey = 'd7d72ddcee1493db536aeeb88ae2440c'; // '3bf73322184a4f70d9f4d634ec1c9fc2';
+const userKey = '3bf73322184a4f70d9f4d634ec1c9fc2'; // 'd7d72ddcee1493db536aeeb88ae2440c';
 
 export const getCuisines = () => {
   const route = '/cuisines';
@@ -39,6 +39,7 @@ export const getFilteredResults = async (
   otherCuisineIds: number[]
 ): Promise<Restaurant[]> => {
   debugger;
+
   const DEFAULT_COST_BOUNDS = [0, 500];
   const DEFAULT_RATING_BOUNDS = [0, 5];
 
@@ -68,7 +69,7 @@ export const getFilteredResults = async (
   }, []);
 
   if (filters.cost || filters.rating) {
-    applySecondaryFilters(filters, allRestaurants); // mutating
+    allRestaurants = applySecondaryFilters(filters, allRestaurants);
   }
 
   // sort
