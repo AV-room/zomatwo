@@ -19,14 +19,14 @@ const App = () => {
   const [openFilterPanel, setOpenFilterPanel] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [hasErrored, setHasErrored] = useState<boolean>(false);
-  const [results, setResults] = useState<Restaurant[]>(null);
-  const [resultsTotal, setResultsTotal] = useState<number>(0);
+  const [results, setResults] = useState<Restaurant[]>([]);
   const [categories, setCategories] = useState<Categories[]>([]);
   const [cuisines, setCuisines] = useState<Cuisines[]>([]);
-  const [otherCuisineIds, setOtherCuisineIds] = useState<number[]>([]); // not the best
+  const [otherCuisineIds, setOtherCuisineIds] = useState<number[]>([]);
   const [rating, setRating] = useState<number[]>([0, 5]);
   const [cost, setCost] = useState<number[]>([0, 500]);
   const [selected, setSelected] = useState<number>(null);
+  const [showDetails, setShowDetails] = useState<boolean>(false);
 
   useEffect(() => {
     setIsLoading(true);
@@ -73,11 +73,9 @@ const App = () => {
 
         if (filteredRestaurants) {
           setResults(filteredRestaurants);
-          setResultsTotal(filteredRestaurants.length);
         } else {
           setHasErrored(true);
-          setResults(null);
-          setResultsTotal(null);
+          setResults([]);
         }
       }
     );
@@ -149,6 +147,11 @@ const App = () => {
 
   const handleSelection = (restaurantId: number) => {
     setSelected(restaurantId);
+    setShowDetails(true);
+  };
+
+  const handleSelectionClose = () => {
+    setShowDetails(false);
   };
 
   const handleFilterClick = (event: any) => {
@@ -157,8 +160,7 @@ const App = () => {
 
   const handleErrorDismissal = (event: any) => {
     setHasErrored(false);
-    setResults(null);
-    setResultsTotal(null);
+    setResults([]);
     resetFilters();
   };
 
@@ -262,7 +264,11 @@ const App = () => {
         {!isLoading && results && (
           <div className="list-and-details">
             <ScrollableList list={results} handleSelection={handleSelection} />
-            <Details restaurant={results[selected]} />
+            <Details
+              restaurant={results[selected]}
+              showDetails={showDetails}
+              handleSelectionClose={handleSelectionClose}
+            />
           </div>
         )}
       </div>

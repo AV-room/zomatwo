@@ -5,15 +5,26 @@ import './styles.scss';
 import Restaurant from '../../interfaces/Restaurant';
 import { convertPriceBracketToSymbol } from '../../utils/helpers';
 
-type DetailsProps = { restaurant: Restaurant };
+type DetailsProps = {
+  restaurant: Restaurant;
+  showDetails: boolean;
+  handleSelectionClose: any;
+};
 
-const Details: React.FC<DetailsProps> = ({ restaurant }) => {
+const Details: React.FC<DetailsProps> = ({
+  restaurant,
+  showDetails,
+  handleSelectionClose
+}) => {
   const handleImgLoadError = (event: any) => {
     event.target.src = 'placeholder.jpeg';
   };
 
   const content = restaurant ? (
     <div className="details-container">
+      <button className="close-details" onClick={handleSelectionClose}>
+        Close
+      </button>
       <img
         className="image"
         src={restaurant.thumb || 'placeholder.jpeg'}
@@ -59,7 +70,11 @@ const Details: React.FC<DetailsProps> = ({ restaurant }) => {
     <p>No restaurant selected</p>
   );
 
-  return <div className="results-details-container">{content}</div>;
+  return (
+    <div className={'results-details-container ' + (showDetails ? 'show' : '')}>
+      {content}
+    </div>
+  );
 };
 
 export default Details;

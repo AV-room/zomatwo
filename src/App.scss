@@ -111,13 +111,15 @@
 }
 
 .results-panel {
-  display: flex;
-  height: 80vh;
 }
 
 .list-and-details {
-  display: flex;
-  flex-basis: 100%;
+  display: block;
+
+  @media (min-width: 600px) {
+    display: flex;
+    flex-basis: 100%;
+  }
 }
 
 .error {

@@ -1,12 +1,12 @@
 .results-list {
-  flex: 100%;
   $list-padding-left: 50px;
   background-color: #e0e0e0;
   overflow-y: scroll;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   min-width: 250px;
+  flex-basis: 100%;
 
-  @media (min-width: 640px) {
+  @media (min-width: 700px) {
     flex-basis: 25%;
   }
 
