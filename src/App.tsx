@@ -32,23 +32,22 @@ const App = () => {
     setIsLoading(true);
 
     // determine other cuisine ids
-    getCuisines().then((res) => {
-      const allCuisineIds = res.data.cuisines.map(
-        (dataItem: { cuisine: { cuisine_id: number } }) =>
-          dataItem.cuisine.cuisine_id
-      );
-      // TODO: catch error
-
-      setOtherCuisineIds(
-        allCuisineIds.filter(
-          (cId: number) => !Object.values(apiIds.cuisines).includes(cId)
-        )
-      );
+    getCuisines().then((allCuisineIds: number[]) => {
+      if (allCuisineIds) {
+        setOtherCuisineIds(
+          allCuisineIds.filter(
+            (cId: number) => !Object.values(apiIds.cuisines).includes(cId)
+          )
+        );
+      } else {
+        setHasErrored(true);
+      }
 
       setIsLoading(false);
     });
   }, []);
 
+  // don't think this is working
   useEffect(() => {
     window.addEventListener('resize', () => {
       if (window.innerWidth > 890 && openFilterPanel) {
@@ -69,14 +68,14 @@ const App = () => {
 
     getFilteredResults(filters, otherCuisineIds).then(
       (filteredRestaurants: Restaurant[]) => {
-        setIsLoading(false);
-
         if (filteredRestaurants) {
           setResults(filteredRestaurants);
         } else {
           setHasErrored(true);
           setResults([]);
         }
+
+        setIsLoading(false);
       }
     );
   }, [categories, cuisines, cost, rating]);
@@ -88,7 +87,7 @@ const App = () => {
     { label: 'Dining', value: Categories.dining },
     { label: 'Take-Away', value: Categories.takeaway },
     { label: 'Delivery', value: Categories.delivery },
-    // { label: 'Pubs & Bars', value: Categories.pubsBars },
+    { label: 'Pubs & Bars', value: Categories.pubsBars },
     { label: 'Nightlife', value: Categories.nightlife }
   ];
 
@@ -228,8 +227,8 @@ const App = () => {
               valueLabelDisplay="auto"
               aria-labelledby="rating-range-slider"
               getAriaValueText={ratingValueText}
-              min={0}
-              max={5}
+              min={DEFAULT_RATING_BOUNDS[0]}
+              max={DEFAULT_RATING_BOUNDS[1]}
               step={0.1}
               marks={ratingMarks}
             />
@@ -245,8 +244,8 @@ const App = () => {
               valueLabelDisplay="auto"
               aria-labelledby="cost-range-slider"
               getAriaValueText={costValueText}
-              min={0}
-              max={500}
+              min={DEFAULT_COST_BOUNDS[0]}
+              max={DEFAULT_COST_BOUNDS[1]}
               step={10}
               marks={costMarks}
             />

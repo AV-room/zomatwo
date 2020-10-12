@@ -7,9 +7,10 @@ import { Sort, SortType, SortOrder } from '../interfaces/Sort';
 import { SearchResponse } from '../interfaces/SearchResponse';
 import { SearchParams } from '../interfaces/SearchParams';
 import Restaurant from '../interfaces/Restaurant';
-import { withinRange } from '../utils/helpers';
+import { withinRange, getTimeoutPromise } from '../utils/helpers';
 import { searchResponseCollection } from '../mockData/mockData';
 import { DEFAULT_COST_BOUNDS, DEFAULT_RATING_BOUNDS } from '../utils/constants';
+import { GetCuisinesResponse } from '../interfaces/GetCuisinesResponse';
 
 export const SEARCH_API_MAX_RESULTS = 100;
 const ENTITY_TYPE = 'city';
@@ -17,7 +18,7 @@ const ENTITY_ID = 297; // Adelaide
 const baseUrl = 'https://developers.zomato.com/api/v2.1';
 const userKey = '3bf73322184a4f70d9f4d634ec1c9fc2'; // 'd7d72ddcee1493db536aeeb88ae2440c';
 
-export const getCuisines = () => {
+export const getCuisines = async (): Promise<number[]> => {
   const route = '/cuisines';
   const requestOptions: AxiosRequestConfig = {
     url: `${baseUrl}${route}`,
@@ -32,7 +33,21 @@ export const getCuisines = () => {
     }
   };
 
-  return axios(requestOptions);
+  let cuisinesResponse: GetCuisinesResponse;
+  try {
+    cuisinesResponse = await Promise.race([
+      axios(requestOptions),
+      getTimeoutPromise()
+    ]);
+  } catch (rejected) {
+    return null;
+  }
+
+  const allCuisineIds = cuisinesResponse.data.cuisines.map(
+    (dataItem) => dataItem.cuisine.cuisine_id
+  );
+
+  return allCuisineIds;
 };
 
 export const getFilteredResults = async (
@@ -149,6 +164,7 @@ const createSearchQueryParams = (
   };
 };
 
+// an attempt to target the search call
 const getSortOrder = (currentBounds: number[], defaultBounds: number[]) => {
   return mean(currentBounds) < mean(defaultBounds) ? 'asc' : 'desc';
 };
@@ -194,11 +210,7 @@ const collectSearchResponses = async (
     } while (startIndex < Math.min(totalResults, SEARCH_API_MAX_RESULTS));
   }
 
-  const timeoutPromise: Promise<any> = new Promise((resolve, reject) =>
-    setTimeout(() => reject(), 20000)
-  );
-
-  return await Promise.race([Promise.all(promises), timeoutPromise]);
+  return await Promise.race([Promise.all(promises), getTimeoutPromise()]);
 };
 
 const querySearchApi = async (

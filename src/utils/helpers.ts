@@ -9,3 +9,6 @@ export const convertPriceBracketToSymbol = (priceBracket: number) => {
 
   return symbolString;
 };
+
+export const getTimeoutPromise = (): Promise<any> =>
+  new Promise((resolve, reject) => setTimeout(() => reject(), 20000));
