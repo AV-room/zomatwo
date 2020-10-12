@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/zomatwo/static/css/main.bda88f8a.chunk.css",
+    "main.js": "/zomatwo/static/js/main.fe7a2bea.chunk.js",
+    "main.js.map": "/zomatwo/static/js/main.fe7a2bea.chunk.js.map",
+    "runtime-main.js": "/zomatwo/static/js/runtime-main.7a591f66.js",
+    "runtime-main.js.map": "/zomatwo/static/js/runtime-main.7a591f66.js.map",
+    "static/js/2.5b719975.chunk.js": "/zomatwo/static/js/2.5b719975.chunk.js",
+    "static/js/2.5b719975.chunk.js.map": "/zomatwo/static/js/2.5b719975.chunk.js.map",
+    "index.html": "/zomatwo/index.html",
+    "precache-manifest.e1209b4645c00c41155f46c5b33c4ea8.js": "/zomatwo/precache-manifest.e1209b4645c00c41155f46c5b33c4ea8.js",
+    "service-worker.js": "/zomatwo/service-worker.js",
+    "static/css/main.bda88f8a.chunk.css.map": "/zomatwo/static/css/main.bda88f8a.chunk.css.map",
+    "static/js/2.5b719975.chunk.js.LICENSE.txt": "/zomatwo/static/js/2.5b719975.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7a591f66.js",
+    "static/js/2.5b719975.chunk.js",
+    "static/css/main.bda88f8a.chunk.css",
+    "static/js/main.fe7a2bea.chunk.js"
+  ]
+}
