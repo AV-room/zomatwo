@@ -1,7 +1,3 @@
-.slider {
-  width: 300px;
-}
-
 // TODO: remove this later
 .spinner {
   width: 40px;
@@ -52,15 +48,33 @@
   }
 }
 
+.show-filters {
+  width: 100%;
+  font-family: 'Open Sans';
+  font-size: 0.57em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+
+  @media (min-width: 890px) {
+    display: none;
+  }
+}
+
 .filter-panel {
-  display: flex;
+  display: none;
   background-color: #fff;
   height: 80vh;
   padding: 20px 50px;
   flex-direction: column;
   justify-content: space-between;
 
+  &.show {
+    display: flex;
+  }
+
   @media (min-width: 890px) {
+    display: flex;
     flex-direction: row;
     height: 20vh;
     min-height: 150px;
@@ -68,11 +82,17 @@
 
   .checkbox-groups {
     display: flex;
+    justify-content: space-evenly;
   }
 
   .sliders {
     display: flex;
     flex-direction: column;
+
+    .slider {
+      width: 300px;
+      align-self: center;
+    }
 
     p {
       font-family: 'Open Sans';

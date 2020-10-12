@@ -13,6 +13,9 @@ import CheckboxGroup from './components/Checkbox';
 // import { Sort, SortType, SortOrder } from './interfaces/Sort';
 
 const App = () => {
+  const [showFilterPanel, setShowFilterPanel] = useState<boolean>(
+    window.innerWidth < 890
+  );
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [results, setResults] = useState<Restaurant[]>(null);
   const [resultsTotal, setResultsTotal] = useState<number>(0);
@@ -131,6 +134,11 @@ const App = () => {
     setSelected(restaurantId);
   };
 
+  const handleFilterClick = (e: any) => {
+    debugger;
+    setShowFilterPanel(!showFilterPanel);
+  };
+
   const ratingMarks = [
     {
       value: 0,
@@ -155,7 +163,10 @@ const App = () => {
 
   return (
     <div className="container">
-      <div className="filter-panel">
+      <button className="show-filters" onClick={handleFilterClick}>
+        Filter
+      </button>
+      <div className={'filter-panel ' + (showFilterPanel ? 'show' : '')}>
         <div className="checkbox-groups">
           <CheckboxGroup
             name="category"

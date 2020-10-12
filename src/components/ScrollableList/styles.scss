@@ -4,6 +4,7 @@
   background-color: #e0e0e0;
   overflow-y: scroll;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  min-width: 250px;
 
   @media (min-width: 640px) {
     flex-basis: 25%;
