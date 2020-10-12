@@ -13,9 +13,7 @@ import CheckboxGroup from './components/Checkbox';
 // import { Sort, SortType, SortOrder } from './interfaces/Sort';
 
 const App = () => {
-  const [showFilterPanel, setShowFilterPanel] = useState<boolean>(
-    window.innerWidth < 890
-  );
+  const [openFilterPanel, setOpenFilterPanel] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [results, setResults] = useState<Restaurant[]>(null);
   const [resultsTotal, setResultsTotal] = useState<number>(0);
@@ -37,7 +35,7 @@ const App = () => {
         (dataItem: { cuisine: { cuisine_id: number } }) =>
           dataItem.cuisine.cuisine_id
       );
-      // setOtherCuisineIds([247, 287]);
+
       setOtherCuisineIds(
         allCuisineIds.filter(
           (cId: number) => !Object.values(apiIds.cuisines).includes(cId)
@@ -45,6 +43,14 @@ const App = () => {
       );
 
       setIsLoading(false);
+    });
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 890 && openFilterPanel) {
+        setOpenFilterPanel(false);
+      }
     });
   }, []);
 
@@ -136,7 +142,7 @@ const App = () => {
 
   const handleFilterClick = (e: any) => {
     debugger;
-    setShowFilterPanel(!showFilterPanel);
+    setOpenFilterPanel(!openFilterPanel);
   };
 
   const ratingMarks = [
@@ -166,7 +172,7 @@ const App = () => {
       <button className="show-filters" onClick={handleFilterClick}>
         Filter
       </button>
-      <div className={'filter-panel ' + (showFilterPanel ? 'show' : '')}>
+      <div className={'filter-panel ' + (openFilterPanel ? 'show' : '')}>
         <div className="checkbox-groups">
           <CheckboxGroup
             name="category"

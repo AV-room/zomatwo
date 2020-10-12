@@ -52,8 +52,6 @@ const Details: React.FC<DetailsProps> = ({ restaurant }) => {
     <p>No restaurant selected</p>
   );
 
-  // TODO: add badge
-
   return <div className="results-details-container">{content}</div>;
 };
 
