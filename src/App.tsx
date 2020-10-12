@@ -128,11 +128,17 @@ const App = () => {
     setCuisines(cuisines);
   };
 
-  const handleRatingChange = (event: any, newValue: any) => {
+  const handleRatingChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    newValue: any
+  ) => {
     setRating(newValue);
   };
 
-  const handleCostChange = (event: any, newValue: any) => {
+  const handleCostChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    newValue: any
+  ) => {
     setCost(newValue);
   };
 
@@ -140,8 +146,7 @@ const App = () => {
     setSelected(restaurantId);
   };
 
-  const handleFilterClick = (e: any) => {
-    debugger;
+  const handleFilterClick = (event: React.ChangeEvent<HTMLInputElement>) => {
     setOpenFilterPanel(!openFilterPanel);
   };
 

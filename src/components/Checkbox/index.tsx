@@ -12,7 +12,7 @@ interface CheckboxGroupProps {
 const CheckboxGroup: React.FC<CheckboxGroupProps> = (props) => {
   const [checkedVals, setCheckedVals] = useState([]);
 
-  const onCheckboxChange = (event: any) => {
+  const onCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newCheckedVals = event.target.checked
       ? [...checkedVals, event.target.name]
       : checkedVals.filter((c: any) => c !== event.target.name);

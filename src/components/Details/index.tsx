@@ -8,9 +8,17 @@ import { convertPriceBracketToSymbol } from '../../utils/helpers';
 type DetailsProps = { restaurant: Restaurant };
 
 const Details: React.FC<DetailsProps> = ({ restaurant }) => {
+  const handleImgLoadError = (event: any) => {
+    event.target.src = 'placeholder.jpeg';
+  };
+
   const content = restaurant ? (
     <div className="details-container">
-      <img className="image" src={restaurant.thumb}></img>
+      <img
+        className="image"
+        src={restaurant.thumb || 'placeholder.jpeg'}
+        onError={handleImgLoadError}
+      ></img>
       <div className="text-content">
         <header>
           <h2 className="title">{restaurant.name}</h2>
@@ -38,7 +46,6 @@ const Details: React.FC<DetailsProps> = ({ restaurant }) => {
           <dd>{restaurant.phone_numbers}</dd>
           <dt>Opening hours</dt>
           <dd>{restaurant.timings}</dd>
-
           <dt>Price</dt>
           <dd>{convertPriceBracketToSymbol(restaurant.price_range)}</dd>
           <dt>Average rating</dt>
