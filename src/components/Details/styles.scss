@@ -1,7 +1,11 @@
 .results-details-container {
+  display: none;
   background-color: #ededed;
-  flex: 0 0 75%;
   padding: 50px;
+
+  @media (min-width: 890px) {
+    flex: 0 0 75%;
+  }
 }
 
 .details-container {
