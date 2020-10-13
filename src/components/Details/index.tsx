@@ -4,6 +4,7 @@ import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 import './styles.scss';
 import Restaurant from '../../interfaces/Restaurant';
 import { convertPriceBracketToSymbol } from '../../utils/helpers';
+import placeholderImage from '../../images/placeholder.jpeg';
 
 type DetailsProps = {
   restaurant: Restaurant;
@@ -17,7 +18,7 @@ const Details: React.FC<DetailsProps> = ({
   handleSelectionClose
 }) => {
   const handleImgLoadError = (event: any) => {
-    event.target.src = 'placeholder.jpeg';
+    event.target.src = placeholderImage;
   };
 
   const content = restaurant ? (
@@ -27,7 +28,7 @@ const Details: React.FC<DetailsProps> = ({
       </button>
       <img
         className="image"
-        src={restaurant.thumb || 'placeholder.jpeg'}
+        src={restaurant.thumb || placeholderImage}
         onError={handleImgLoadError}
       ></img>
       <div className="text-content">
