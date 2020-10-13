@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
 import { isEqual } from 'lodash';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import './App.scss';
 import Restaurant from './interfaces/Restaurant';
 import { Categories, Cuisines } from './enums';
 import { getCuisines } from './api/Api';
 import { apiIds } from './api/ApiIdMap';
 import { Filters } from './interfaces/Filters';
-import ScrollableList from './components/ScrollableList';
+import ClickableList from './components/ClickableList';
 import CheckboxGroup from './components/Checkbox';
 import Spinner from './components/Spinner';
 import Alert from './components/Alert';
@@ -19,11 +21,9 @@ import {
   BP_LGE
 } from './utils/constants';
 import { getFilteredResults } from './filtering';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import WithImageAndHeader from './components/WithImageAndHeader';
 import RestaurantDetails from './components/RestaurantDetails';
+import RestaurantResultsListItem from './components/RestaurantResultsListItem';
 
 const App = () => {
   const [isPostInitialRender, setIsPostInitialRender] = useState<boolean>(
@@ -209,6 +209,8 @@ const App = () => {
     }
   };
 
+  // higher order components
+  const RestaurantResultsList = ClickableList(RestaurantResultsListItem);
   const RestaurantDetailsWithImageAndHeader = WithImageAndHeader(
     RestaurantDetails
   );
@@ -285,7 +287,7 @@ const App = () => {
         {!isLoading && (
           <div className="results-panel">
             <div className="results-list-container">
-              <ScrollableList
+              <RestaurantResultsList
                 list={results}
                 handleSelection={handleSelection}
               />
