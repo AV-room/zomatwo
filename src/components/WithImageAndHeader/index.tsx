@@ -8,21 +8,19 @@ const WithImageAndHeader = (Component: any) => {
   };
 
   return ({ title, byline, imageSrc, imageAlt, ...remainingProps }: any) => (
-    <div>
-      <div className="details-container">
-        <img
-          className="image"
-          src={imageSrc || placeholderImage}
-          alt={imageAlt}
-          onError={handleImgLoadError}
-        ></img>
-        <div className="text-content">
-          <header>
-            <h2 className="title">{title}</h2>
-            <p className="byline">{byline}</p>
-          </header>
-          <Component {...remainingProps} />
-        </div>
+    <div className="image-header-container">
+      <img
+        className="image"
+        src={imageSrc || placeholderImage}
+        alt={imageAlt}
+        onError={handleImgLoadError}
+      ></img>
+      <div className="text-content">
+        <header>
+          <h2 className="title">{title}</h2>
+          <p className="byline">{byline}</p>
+        </header>
+        <Component {...remainingProps} />
       </div>
     </div>
   );
