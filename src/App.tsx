@@ -17,10 +17,13 @@ import { DEFAULT_COST_BOUNDS, DEFAULT_RATING_BOUNDS } from './utils/constants';
 import { getFilteredResults } from './filtering';
 
 const App = () => {
+  const [isPostInitialRender, setIsPostInitialRender] = useState<boolean>(
+    false
+  );
   const [openFilterPanel, setOpenFilterPanel] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [hasErrored, setHasErrored] = useState<boolean>(false);
-  const [results, setResults] = useState<Restaurant[]>([]);
+  const [results, setResults] = useState<Restaurant[]>(null);
   const [categories, setCategories] = useState<Categories[]>([]);
   const [cuisines, setCuisines] = useState<Cuisines[]>([]);
   const [otherCuisineIds, setOtherCuisineIds] = useState<number[]>([]);
@@ -58,27 +61,34 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    setIsLoading(true);
+    if (isPostInitialRender) {
+      setIsLoading(true);
 
-    const filters: Filters = {
-      categories,
-      cuisines,
-      cost,
-      rating
-    };
+      const filters: Filters = {
+        categories,
+        cuisines,
+        cost,
+        rating
+      };
 
-    getFilteredResults(filters, otherCuisineIds).then(
-      (filteredRestaurants: Restaurant[]) => {
-        if (filteredRestaurants) {
-          setResults(filteredRestaurants);
-        } else {
-          setHasErrored(true);
-          setResults([]);
+      getFilteredResults(filters, otherCuisineIds).then(
+        (filteredRestaurants: Restaurant[]) => {
+          if (filteredRestaurants) {
+            setResults(filteredRestaurants);
+          } else {
+            setHasErrored(true);
+            setResults(null);
+            setSelected(null);
+          }
+
+          setIsLoading(false);
         }
+      );
+    }
 
-        setIsLoading(false);
-      }
-    );
+    if (!isPostInitialRender) {
+      setIsPostInitialRender(true);
+    }
   }, [categories, cuisines, cost, rating]);
 
   const ratingValueText = (value: any) => value;
@@ -254,18 +264,22 @@ const App = () => {
         </div>
       </div>
 
-      <div className="results-panel">
+      <div>
         {isLoading && (
           <div className="spinner">
-            <div className="double-bounce1"></div>
-            <div className="double-bounce2"></div>
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
         )}
-        {!isLoading && results && (
-          <div className="list-and-details">
+
+        {!isLoading && (
+          <div className="results-panel">
             <ScrollableList list={results} handleSelection={handleSelection} />
             <Details
-              restaurant={results[selected]}
+              restaurant={
+                results !== null && selected !== null ? results[selected] : null
+              }
               showDetails={showDetails}
               handleSelectionClose={handleSelectionClose}
             />
