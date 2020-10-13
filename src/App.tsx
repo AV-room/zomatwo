@@ -301,7 +301,7 @@ const App = () => {
               <button className="close" onClick={handleSelectionClose}>
                 <FontAwesomeIcon icon={faTimes} />
               </button>
-              {results !== null && selected !== null && (
+              {results !== null && results.length > 0 && selected !== null && (
                 <RestaurantDetailsWithImageAndHeader
                   title={results[selected].name}
                   byline={results[selected].location.address}

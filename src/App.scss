@@ -1,3 +1,5 @@
+@import './sass/breakpoints';
+
 .show-filters {
   width: 100%;
   font-family: 'Open Sans';
@@ -6,7 +8,7 @@
   text-transform: uppercase;
   letter-spacing: 0.7px;
 
-  @media (min-width: 890px) {
+  @media (min-width: $BP_LGE) {
     display: none;
   }
 }
@@ -22,7 +24,7 @@
     display: flex;
   }
 
-  @media (min-width: 890px) {
+  @media (min-width: $BP_LGE) {
     display: flex;
     flex-direction: row;
     height: 20vh;
@@ -63,7 +65,7 @@
   height: 100%;
   display: block;
 
-  @media (min-width: 600px) {
+  @media (min-width: $BP_MED) {
     display: flex;
     flex-basis: 100%;
   }
@@ -85,7 +87,7 @@
   width: 80%;
   padding: 50px;
 
-  @media (max-width: 600px) {
+  @media (max-width: $BP_MED) {
     &.show-mobile {
       display: flex;
       position: fixed;
@@ -98,7 +100,7 @@
     }
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: $BP_MED) {
     display: flex;
   }
 }
@@ -111,7 +113,7 @@
   top: 20px;
   cursor: pointer;
 
-  @media (min-width: 600px) {
+  @media (min-width: $BP_MED) {
     display: none;
   }
 }

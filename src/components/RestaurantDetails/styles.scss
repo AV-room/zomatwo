@@ -1,9 +1,14 @@
+@import '../../sass/breakpoints';
+
 .details-container {
   flex-wrap: wrap;
+  margin: auto;
 
-  @media (min-width: 800px) {
+  @media (min-width: $BP_LGE) {
     display: flex;
     flex-wrap: nowrap;
+    margin: unset;
+    width: 100%;
   }
 }
 
@@ -15,6 +20,11 @@
 }
 
 header {
+  text-align: center;
+
+  @media (min-width: $BP_MED) {
+    text-align: unset;
+  }
   .title {
     font-family: 'Lato', sans-serif;
     font-weight: bold;
@@ -71,7 +81,7 @@ header {
   top: 20px;
   cursor: pointer;
 
-  @media (min-width: 600px) {
+  @media (min-width: $BP_MED) {
     display: none;
   }
 }
