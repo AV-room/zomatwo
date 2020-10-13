@@ -23,7 +23,7 @@ const Details: React.FC<DetailsProps> = ({
   const content = restaurant ? (
     <div className="details-container">
       <button className="close-details" onClick={handleSelectionClose}>
-        Close
+        <FontAwesomeIcon icon={faTimes} />
       </button>
       <img
         className="image"
