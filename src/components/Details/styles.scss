@@ -33,9 +33,10 @@
 }
 
 .image {
-  width: 275px;
+  min-width: 275px;
   height: 275px;
   margin-right: 50px;
+  margin-bottom: 20px;
 }
 
 header {
@@ -87,10 +88,12 @@ header {
   }
 }
 
-.close-details {
+.close {
   display: block;
   border: none;
-  float: right;
+  position: absolute;
+  right: 20px;
+  top: 20px;
   cursor: pointer;
 
   @media (min-width: 600px) {

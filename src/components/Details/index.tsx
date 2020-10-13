@@ -25,7 +25,7 @@ const Details: React.FC<DetailsProps> = ({
     <div className={'results-details-container ' + (showDetails ? 'show' : '')}>
       {restaurant && (
         <div className="details-container">
-          <button className="close-details" onClick={handleSelectionClose}>
+          <button className="close" onClick={handleSelectionClose}>
             <FontAwesomeIcon icon={faTimes} />
           </button>
           <img
