@@ -12,7 +12,12 @@ import ScrollableList from './components/ScrollableList';
 import CheckboxGroup from './components/Checkbox';
 import Spinner from './components/Spinner';
 import Alert from './components/Alert';
-import { DEFAULT_COST_BOUNDS, DEFAULT_RATING_BOUNDS } from './utils/constants';
+import {
+  DEFAULT_COST_BOUNDS,
+  DEFAULT_RATING_BOUNDS,
+  BP_MED,
+  BP_LGE
+} from './utils/constants';
 import { getFilteredResults } from './filtering';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -34,7 +39,9 @@ const App = () => {
   const [rating, setRating] = useState<number[]>([0, 5]);
   const [cost, setCost] = useState<number[]>([0, 500]);
   const [selected, setSelected] = useState<number>(null);
-  const [showDetails, setShowDetails] = useState<boolean>(false);
+  const [showMobileViewDetails, setShowMobileViewDetails] = useState<boolean>(
+    false
+  );
 
   useEffect(() => {
     setIsLoading(true);
@@ -55,10 +62,12 @@ const App = () => {
     });
   }, []);
 
-  // don't think this is working
   useEffect(() => {
     window.addEventListener('resize', () => {
-      if (window.innerWidth > 890 && openFilterPanel) {
+      if (window.innerWidth > BP_MED) {
+        setShowMobileViewDetails(false);
+      }
+      if (window.innerWidth > BP_LGE) {
         setOpenFilterPanel(false);
       }
     });
@@ -164,11 +173,11 @@ const App = () => {
 
   const handleSelection = (restaurantId: number) => {
     setSelected(restaurantId);
-    setShowDetails(true);
+    setShowMobileViewDetails(true);
   };
 
   const handleSelectionClose = () => {
-    setShowDetails(false);
+    setShowMobileViewDetails(false);
   };
 
   const handleFilterClick = (event: any) => {
@@ -283,7 +292,8 @@ const App = () => {
             </div>
             <div
               className={
-                'results-details-container ' + (showDetails ? 'show' : '')
+                'results-details-container ' +
+                (showMobileViewDetails ? 'show-mobile' : '')
               }
             >
               <button className="close" onClick={handleSelectionClose}>

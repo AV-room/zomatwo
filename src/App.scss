@@ -86,7 +86,7 @@
   padding: 50px;
 
   @media (max-width: 600px) {
-    &.show {
+    &.show-mobile {
       display: flex;
       position: fixed;
       width: 100%;
