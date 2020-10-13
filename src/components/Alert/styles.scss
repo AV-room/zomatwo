@@ -1,0 +1,19 @@
+.alert-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: lightgray;
+  color: white;
+
+  &.error {
+    background-color: #f44336;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+  }
+}

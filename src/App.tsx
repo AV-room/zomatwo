@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes, faCircle } from '@fortawesome/free-solid-svg-icons';
 import { isEqual } from 'lodash';
 import './App.scss';
 import Restaurant from './interfaces/Restaurant';
@@ -14,6 +12,7 @@ import ScrollableList from './components/ScrollableList';
 import Details from './components/Details';
 import CheckboxGroup from './components/Checkbox';
 import Spinner from './components/Spinner';
+import Alert from './components/Alert';
 import { DEFAULT_COST_BOUNDS, DEFAULT_RATING_BOUNDS } from './utils/constants';
 import { getFilteredResults } from './filtering';
 
@@ -78,8 +77,11 @@ const App = () => {
             setResults(filteredRestaurants);
           } else {
             setHasErrored(true);
-            setResults(null);
-            setSelected(null);
+
+            if (results !== null) {
+              setResults(null);
+              setSelected(null);
+            }
           }
 
           setIsLoading(false);
@@ -197,15 +199,11 @@ const App = () => {
   return (
     <div className="container">
       {hasErrored && (
-        <h2 className="error">
-          There has been an error.
-          <button className="closebtn" onClick={handleErrorDismissal}>
-            <span className="fa-layers fa-fw">
-              <FontAwesomeIcon icon={faCircle} size="lg" color="#f44336" />
-              <FontAwesomeIcon icon={faTimes} size="lg" color="white" />
-            </span>
-          </button>
-        </h2>
+        <Alert
+          type="error"
+          message="There has been an error."
+          handleDismissal={handleErrorDismissal}
+        />
       )}
       <button className="show-filters" onClick={handleFilterClick}>
         Filter
