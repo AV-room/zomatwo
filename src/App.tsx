@@ -9,12 +9,16 @@ import { getCuisines } from './api/Api';
 import { apiIds } from './api/ApiIdMap';
 import { Filters } from './interfaces/Filters';
 import ScrollableList from './components/ScrollableList';
-import Details from './components/Details';
 import CheckboxGroup from './components/Checkbox';
 import Spinner from './components/Spinner';
 import Alert from './components/Alert';
 import { DEFAULT_COST_BOUNDS, DEFAULT_RATING_BOUNDS } from './utils/constants';
 import { getFilteredResults } from './filtering';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import WithImageAndHeader from './components/WithImageAndHeader';
+import RestaurantDetails from './components/RestaurantDetails';
 
 const App = () => {
   const [isPostInitialRender, setIsPostInitialRender] = useState<boolean>(
@@ -196,6 +200,10 @@ const App = () => {
     }
   };
 
+  const RestaurantDetailsWithImageAndHeader = WithImageAndHeader(
+    RestaurantDetails
+  );
+
   return (
     <div className="container">
       {hasErrored && (
@@ -268,13 +276,24 @@ const App = () => {
         {!isLoading && (
           <div className="results-panel">
             <ScrollableList list={results} handleSelection={handleSelection} />
-            <Details
-              restaurant={
-                results !== null && selected !== null ? results[selected] : null
+            <div
+              className={
+                'results-details-container ' + (showDetails ? 'show' : '')
               }
-              showDetails={showDetails}
-              handleSelectionClose={handleSelectionClose}
-            />
+            >
+              <button className="close" onClick={handleSelectionClose}>
+                <FontAwesomeIcon icon={faTimes} />
+              </button>
+              {results !== null && selected !== null && (
+                <RestaurantDetailsWithImageAndHeader
+                  title={results[selected].name}
+                  byline={results[selected].location.address}
+                  imageSrc={results[selected].thumb}
+                  imageAlt="restaurant thumbnail"
+                  restaurant={results[selected]}
+                />
+              )}
+            </div>
           </div>
         )}
       </div>

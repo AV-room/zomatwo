@@ -8,26 +8,17 @@ import placeholderImage from '../../images/placeholder.jpeg';
 
 type DetailsProps = {
   restaurant: Restaurant;
-  showDetails: boolean;
-  handleSelectionClose: any;
 };
 
-const Details: React.FC<DetailsProps> = ({
-  restaurant,
-  showDetails,
-  handleSelectionClose
-}) => {
+const Details: React.FC<DetailsProps> = ({ restaurant }) => {
   const handleImgLoadError = (event: any) => {
     event.target.src = placeholderImage;
   };
 
   return (
-    <div className={'results-details-container ' + (showDetails ? 'show' : '')}>
+    <div>
       {restaurant && (
         <div className="details-container">
-          <button className="close" onClick={handleSelectionClose}>
-            <FontAwesomeIcon icon={faTimes} />
-          </button>
           <img
             className="image"
             src={restaurant.thumb || placeholderImage}
