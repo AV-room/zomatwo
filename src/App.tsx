@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes, faCircle } from '@fortawesome/free-solid-svg-icons';
 import { isEqual } from 'lodash';
 import './App.scss';
 import Restaurant from './interfaces/Restaurant';
@@ -11,8 +13,7 @@ import { Filters } from './interfaces/Filters';
 import ScrollableList from './components/ScrollableList';
 import Details from './components/Details';
 import CheckboxGroup from './components/Checkbox';
-import { faTimes, faCircle } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Spinner from './components/Spinner';
 import { DEFAULT_COST_BOUNDS, DEFAULT_RATING_BOUNDS } from './utils/constants';
 import { getFilteredResults } from './filtering';
 
@@ -265,14 +266,7 @@ const App = () => {
       </div>
 
       <div>
-        {isLoading && (
-          <div className="spinner">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        )}
-
+        {isLoading && <Spinner />}
         {!isLoading && (
           <div className="results-panel">
             <ScrollableList list={results} handleSelection={handleSelection} />
