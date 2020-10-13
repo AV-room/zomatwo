@@ -69,6 +69,16 @@
   }
 }
 
+.results-list-container {
+  background-color: #e0e0e0; // why do I need this here as well?
+  min-width: 250px;
+  flex-basis: 100%;
+
+  @media (min-width: 700px) {
+    flex-basis: 25%;
+  }
+}
+
 .results-details-container {
   display: none;
   background-color: #ededed;

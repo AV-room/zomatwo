@@ -275,7 +275,12 @@ const App = () => {
         {isLoading && <Spinner />}
         {!isLoading && (
           <div className="results-panel">
-            <ScrollableList list={results} handleSelection={handleSelection} />
+            <div className="results-list-container">
+              <ScrollableList
+                list={results}
+                handleSelection={handleSelection}
+              />
+            </div>
             <div
               className={
                 'results-details-container ' + (showDetails ? 'show' : '')
