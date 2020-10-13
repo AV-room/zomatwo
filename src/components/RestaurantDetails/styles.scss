@@ -1,43 +1,5 @@
 @import '../../sass/breakpoints';
 
-.details-container {
-  flex-wrap: wrap;
-  margin: auto;
-
-  @media (min-width: $BP_LGE) {
-    display: flex;
-    flex-wrap: nowrap;
-    margin: unset;
-    width: 100%;
-  }
-}
-
-.image {
-  min-width: 275px;
-  height: 275px;
-  margin-right: 50px;
-  margin-bottom: 20px;
-}
-
-header {
-  text-align: center;
-
-  @media (min-width: $BP_MED) {
-    text-align: unset;
-  }
-  .title {
-    font-family: 'Lato', sans-serif;
-    font-weight: bold;
-    font-size: 2em;
-  }
-
-  .byline {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 0.8em;
-    margin: 5px 0 20px 0;
-  }
-}
-
 .notables {
   font-family: 'Open Sans', sans-serif;
   font-size: 0.8em;
