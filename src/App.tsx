@@ -5,7 +5,7 @@ import { isEqual } from 'lodash';
 import './App.scss';
 import Restaurant from './interfaces/Restaurant';
 import { Categories, Cuisines } from './enums';
-import { getFilteredResults, getCuisines } from './api/Api';
+import { getCuisines } from './api/Api';
 import { apiIds } from './api/ApiIdMap';
 import { Filters } from './interfaces/Filters';
 import ScrollableList from './components/ScrollableList';
@@ -14,6 +14,7 @@ import CheckboxGroup from './components/Checkbox';
 import { faTimes, faCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { DEFAULT_COST_BOUNDS, DEFAULT_RATING_BOUNDS } from './utils/constants';
+import { getFilteredResults } from './filtering';
 
 const App = () => {
   const [openFilterPanel, setOpenFilterPanel] = useState<boolean>(false);
