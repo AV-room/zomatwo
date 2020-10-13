@@ -1,11 +1,6 @@
 import React from 'react';
 import './styles.scss';
-import Restaurant from '../../interfaces/Restaurant';
 import placeholderImage from '../../images/placeholder.jpeg';
-
-type WithImageAndHeader = {
-  restaurant: Restaurant;
-};
 
 const WithImageAndHeader = (Component: any) => {
   const handleImgLoadError = (event: any) => {
