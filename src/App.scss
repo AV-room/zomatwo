@@ -76,7 +76,7 @@
   min-width: 250px;
   flex-basis: 100%;
 
-  @media (min-width: 700px) {
+  @media (min-width: $BP_MED) {
     flex-basis: 25%;
   }
 }
