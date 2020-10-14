@@ -64,6 +64,7 @@
 .results-panel {
   height: 100%;
   display: block;
+  min-width: 300px;
 
   @media (min-width: $BP_MED) {
     display: flex;
